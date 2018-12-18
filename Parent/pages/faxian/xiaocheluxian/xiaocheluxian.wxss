@@ -1,0 +1,45 @@
+.tab-wrapper{
+  display: flex;
+  font-size: 15px;
+  height: 80rpx;
+  width: 100%;
+  border-top: 1px solid #e2e2e2;
+}
+.tab-wrapper image{
+  width: 30rpx;
+  height: 30rpx;
+
+}
+.ms{
+  width: 50%;
+  position: relative;
+}
+.ms image{
+  position: absolute;
+  top: 25rpx;
+  left: 100rpx;
+}
+.ms text{
+  position: absolute;
+  top: 20rpx;
+  left: 150rpx;
+}
+.left{
+  border-right: 1px solid #e2e2e2;
+}
+.sous{
+  display: flex;
+  background-color: #f7f7f7;
+  width: 85%;
+  margin: 20rpx auto;
+  padding: 10rpx;
+  border-radius: 1em;
+}
+.sous image{
+  width:30rpx;
+  height: 30rpx;
+  padding: 12rpx;
+}
+.sous input{
+  font-size: 15px;
+}

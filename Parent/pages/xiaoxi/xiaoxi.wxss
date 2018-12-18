@@ -1,0 +1,31 @@
+.xiaoxi{
+  height: 150rpx;
+  border-bottom: 1px solid #e2e2e2;
+  position: relative;
+}
+.xiaoxi image{
+  width: 50rpx;
+  height: 50rpx;
+  position: absolute;
+  left: 20rpx;
+  top: 50rpx;
+}
+.djtz{
+  position: absolute;
+  left: 100rpx;
+  top: 40rpx;
+  font-size: 15px;
+  font-weight: bold;
+}
+.xhjz{
+  position: absolute;
+  left: 100rpx;
+  top: 90rpx;
+  color: #909090;
+}
+.sj{
+  position: absolute;
+  right: 30rpx;
+  top: 40rpx;
+  color: #909090;
+}

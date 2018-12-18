@@ -1,0 +1,16 @@
+<view class="app">
+    <view class="header">
+      <text class='title'>智慧校车</text>
+      <view class="sousuo">
+        <navigator class='btn' url='/pages/aa/aa'>
+        <image src='../images/icon_search.png'></image>
+        <text>智慧校车</text>
+        </navigator>
+      </view>
+    </view>
+    <image class='banner_news' src='../images/banner_news.png'></image>
+    <view class='xc'>
+      <image class='pic_default' src='../images/pic_default.png'></image>
+      <view>暂无行程</view>
+    </view>
+  </view>

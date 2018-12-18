@@ -1,0 +1,19 @@
+<!--pages/faxian/xiaocheluxian/xiaocheluxian.wxml-->
+<view class='sous'>
+  <image src='../../images/icon_search.png'></image>
+  <input placeholder='搜索站点'></input>
+</view>
+<view>
+  <view class='tab-wrapper'>
+    <view class='ms left'>
+      <image src='./images/icon_sitemode.png'></image>
+      <text id='tableft' class='tab-left {{currentTab === 0 ? "tab-active":""}}' bindtap='switchTab'>站点模式</text>
+    </view>
+    <view class='ms'>
+      <image src='./images/icon_mapmode.png'></image>
+      <text id='tabright' class='tab-right {{currentTab === 1 ? "tab-active" : ""}}' bindtap='switchTab'>地图模式</text>
+    </view>
+  </view>
+  <view class='content-wrapper' wx:if='{{currentTab === 0}}'><zhandianmoshi/></view>
+  <view class='content-wrapper' wx:if='{{currentTab === 1}}'><ditumoshi/></view>
+</view>

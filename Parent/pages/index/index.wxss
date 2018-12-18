@@ -1,0 +1,85 @@
+.app {
+width: 100%;
+height: 100%;
+}
+.app swiper {
+  height: 100%;
+}
+
+.app image {
+  width: 100%;
+  height: 100%;
+}
+.last image{
+  height: 40%;
+}
+.yz{
+  width: 80%;
+  height: 500rpx;
+  position: absolute;
+  top: 30%;
+  left: 10%;
+  background-color: #fff;
+  font-size: 15px;
+  box-shadow: 3px 3px 3px rgb(249, 224, 202);
+  border-radius: 1em;
+}
+.yz image{
+  width: 30rpx;
+  height: 40rpx;
+}
+.tel .phone{
+  position: absolute;
+  top: 80rpx;
+  left: 80rpx;
+}
+.tel .srsjhm{
+  position: absolute;
+  top: 80rpx;
+  left: 160rpx;
+}
+.xhx_one{
+  position: absolute;
+  top: 150rpx;
+  left: 60rpx;
+  height: 2rpx;
+  background-color: #f3f3f3;
+  width: 80%;
+}
+.mm .password{
+  position: absolute;
+  top: 200rpx;
+  left: 80rpx;
+}
+.mm .srmm{
+  position: absolute;
+  top: 200rpx;
+  left: 160rpx;
+}
+.xhx_two{
+  position: absolute;
+  top: 270rpx;
+  left: 60rpx;
+  height: 2rpx;
+  background-color: #f3f3f3;
+  width: 80%;
+}
+.btn{
+  width: 80%;
+  background-color: #f4bb3a;
+  position: absolute;
+  bottom: 100rpx;
+  left: 60rpx;
+  border-radius: 1em;
+  color: #fff;
+  text-align: center;
+  padding: 20rpx 0;
+  font-weight: bold;
+}
+.wjmm{
+  position: absolute;
+  right: 80rpx;
+  bottom: 30rpx;
+  font-size: 13px;
+  color: #f4bb3a;
+}

@@ -1,0 +1,126 @@
+.banner_news{
+  width: 100%;
+  height: 200rpx;
+}
+.content_one{
+  height: 120rpx;
+  position: relative;
+  text-align: center;
+  margin-top: 20rpx;
+}
+.content_one image{
+  width: 50rpx;
+  height: 50rpx;
+  margin-bottom: 10rpx;
+}
+.xclx{
+  position: absolute;
+  left: 5%;
+}
+.zdzj{
+  position: absolute;
+  left: 30%;
+}
+.swzl{
+  position: absolute;
+  left: 55%;
+}
+.hysq{
+  position: absolute;
+  left: 80%;
+}
+.content_two{
+  width: 50%;
+  height: 150rpx;
+  font-size: 15px;
+  position: relative;
+}
+.content_two image{
+  position: absolute;
+  width: 50rpx;
+  height: 50rpx;
+  top: 50rpx;
+  left: 50rpx;
+}
+.content_two .one{
+  font-size: 13px;
+  position: absolute;
+  top: 40rpx;
+  left: 150rpx;
+}
+.content_two .two{
+  position: absolute;
+  top: 80rpx;
+  left: 150rpx;
+  color: #909090;
+  font-size: 11px;
+}
+.content_third{
+  display: flex;
+  background-color: #e2e2e2;
+}
+.content_third image{
+  width: 50%;
+  height: 300rpx;
+  margin: 15rpx;
+}
+.content_four{
+  display: flex;
+  text-align: center;
+  margin: 15rpx;
+}
+.content_four .icon_news{
+  width: 50rpx;
+  height: 50rpx;
+  margin-right: 10rpx;
+}
+.more{
+  position: absolute;
+  right: 30rpx;
+}
+.content_four .icon_more{
+  width: 30rpx;
+  height: 20rpx;
+  margin-left: 50rpx;
+  }
+.content_four .text_more{
+  color: #ffcc00;
+}
+.content_five{
+  height: 300rpx;
+  border-top: 1px solid #e2e2e2;
+  margin: 20rpx 0;
+  position: relative;
+}
+.content_five .icon_browse{
+  position: absolute;
+  bottom: 30rpx;
+  left: 30rpx;
+  color: #909090;
+}
+.content_five .icon_browse image{
+  width: 35rpx;
+  height: 20rpx;
+  margin-right: 20rpx;
+}
+.content_five .login_bg{
+  width: 40%;
+  height: 250rpx;
+  position: absolute;
+  right: 15rpx;
+  top: 20rpx;
+}
+.content_five .text{
+  position: absolute;
+  top:30rpx;
+  left: 30rpx;
+  width: 50%;
+  font-size: 15px;
+  text-overflow: -o-ellipsis-lastline;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  align-content: center;
+}

@@ -1,0 +1,16 @@
+<view style='text-align: center;'>
+  <image style='height:400rpx;width:100%;' src='../../images/login_bg.png'></image>
+  <view style='margin-top:50rpx;color:#ed9b45'>欢迎来到智能校车</view>
+  <view style='color:#ed9b45'>请选择您想要查看的孩子校车实时情况</view>
+ <radio-group>
+  <radio checked='true' color='#fbb519'>
+    <image style='width:150rpx;height:150rpx;' src='../../images/icon_girl.png'></image>
+    <view>王里</view>
+  </radio>
+  <radio color='#fbb519'>
+    <image style='width:150rpx;height:150rpx;' src='../../images/icon_girl.png'></image>
+    <view>李三</view>
+  </radio>
+  </radio-group>
+  <navigator open-type='switchTab' url='/pages/shouye/shouye'>进入首页</navigator>
+</view>

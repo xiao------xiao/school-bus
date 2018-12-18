@@ -1,0 +1,55 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/shouye/shouye",
+    "pages/faxian/faxian",
+    "pages/xiaoxi/xiaoxi",
+    "pages/wode/wode",
+    "pages/aa/aa",
+    "pages/index/yzmm/yzmm",
+    "pages/faxian/xiaocheluxian/xiaocheluxian",
+    "pages/faxian/xiaocheluxian/zhandianmoshi/zhandianmoshi",
+    "pages/faxian/xiaocheluxian/ditumoshi/ditumoshi",
+    "pages/faxian/zhandianzhengji/zhandianzhengji",
+    "pages/faxian/woderili/woderili",
+    "pages/wode/lingjiesongma/lingjiesongma",
+    "pages/wode/qiehuanhaizi/qiehuanhaizi",
+    "pages/wode/wodexiaoche/wodexiaoche"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "selectedColor": "#000",
+    "backgroundColor": "#fff",
+    "list": [
+      {
+        "pagePath": "pages/shouye/shouye",
+        "text": "首页",
+        "iconPath": "pages/images/icon_index.png",
+        "selectedIconPath": "pages/images/icon_index_sel.png"
+      },
+      {
+        "pagePath": "pages/faxian/faxian",
+        "text": "发现",
+        "iconPath": "pages/images/icon_found.png",
+        "selectedIconPath": "pages/images/icon_find_sel.png"
+      },
+      {
+        "pagePath": "pages/xiaoxi/xiaoxi",
+        "text": "消息",
+        "iconPath": "pages/images/icon_message.png",
+        "selectedIconPath": "pages/images/icon_message_sel.png"
+      },
+      {
+        "pagePath": "pages/wode/wode",
+        "text": "我的",
+        "iconPath": "pages/images/icon_my.png",
+        "selectedIconPath": "pages/images/icon_my_sel.png"
+      }
+    ]
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "zhandianmoshi": "./zhandianmoshi/zhandianmoshi",
+    "ditumoshi": "./ditumoshi/ditumoshi"
+  }
+}

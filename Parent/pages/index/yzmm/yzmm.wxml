@@ -1,0 +1,28 @@
+<view class='yzmm'>
+  <image src='../../images/login_bg.png'></image>
+    <view class='yz'>
+      <view class="tel">
+        <image class='phone' src='../../images/icon_phone.png'></image>
+        <input class='srsjhm' type='text' placeholder='请输入您的手机号码'></input>
+      </view>
+      <view class='xhx_one'></view>
+      <view class="yzm">
+        <image class='verify' src='../../images/icon_verify.png'></image>
+        <input class='sryzm' type='text' placeholder='请输入验证码'></input>
+        <navigator class='hqyzm' bindtap='hqyzm'>获取验证码</navigator>
+      </view>
+      <view class='xhx_two'></view>
+      <view class="mm">
+            <image class='password' src='../../images/icon_password.png'></image>
+            <input class='srmm' type='text' placeholder='请输入您的密码'></input>
+          </view>
+          <view class='xhx_third'></view>
+          <view class="csmm">
+            <image class='password' src='../../images/icon_password.png'></image>
+            <input class='srmm' type='text' placeholder='请输入您的密码'></input>
+          </view>
+          <view class='xhx_four'></view>
+      <navigator class='btn' open-type='switchTab' url='/pages/shouye/index'>登 录</navigator>
+      <navigator class='wjmm' url='/pages/index/index'>有账号？</navigator>
+   </view>
+</view>
