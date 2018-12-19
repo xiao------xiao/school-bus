@@ -8,23 +8,7 @@
       </swiper-item>
       <swiper-item>
         <image src='../images/0.3loading.jpg'></image>
-      </swiper-item>
-      <swiper-item class='last'>
-        <image src='../images/login_bg.png'></image>
-        <view class='yz'>
-          <view class="tel">
-            <image class='phone' src='../images/icon_phone.png'></image>
-            <input class='srsjhm' type='text' placeholder='请输入您的手机号码'></input>
-          </view>
-          <view class='xhx_one'></view>
-          <view class="mm">
-            <image class='password' src='../images/icon_password.png'></image>
-            <input class='srmm' type='text' placeholder='请输入您的密码'></input>
-          </view>
-          <view class='xhx_two'></view>
-          <navigator class='btn' open-type='switchTab' url='/pages/shouye/shouye'>登 录</navigator>
-          <navigator class='wjmm' url='/pages/index/yzmm/yzmm'>忘记密码？</navigator>
-        </view>
+        <navigator url='/pages/index/delu/delu'>登 录</navigator>
       </swiper-item>
     </swiper>
 </view>

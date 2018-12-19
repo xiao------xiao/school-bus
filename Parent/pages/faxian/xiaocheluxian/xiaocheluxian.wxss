@@ -1,6 +1,5 @@
 .tab-wrapper{
   display: flex;
-  font-size: 15px;
   height: 80rpx;
   width: 100%;
   border-top: 1px solid #e2e2e2;
@@ -42,4 +41,11 @@
 }
 .sous input{
   font-size: 15px;
+}
+
+.tab-left,.tab-right{
+  color: #e2e2e2;
+}
+.tab-active{
+  color: black;
 }

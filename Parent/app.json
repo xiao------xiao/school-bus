@@ -6,7 +6,7 @@
     "pages/xiaoxi/xiaoxi",
     "pages/wode/wode",
     "pages/aa/aa",
-    "pages/index/yzmm/yzmm",
+    "pages/index/wjmm/wjmm",
     "pages/faxian/xiaocheluxian/xiaocheluxian",
     "pages/faxian/xiaocheluxian/zhandianmoshi/zhandianmoshi",
     "pages/faxian/xiaocheluxian/ditumoshi/ditumoshi",
@@ -14,7 +14,14 @@
     "pages/faxian/woderili/woderili",
     "pages/wode/lingjiesongma/lingjiesongma",
     "pages/wode/qiehuanhaizi/qiehuanhaizi",
-    "pages/wode/wodexiaoche/wodexiaoche"
+    "pages/wode/wodexiaoche/wodexiaoche",
+    "pages/wode/wodexiaoche/wodeyuding/wodeyuding",
+    "pages/wode/wodexiaoche/wodeshoucang/wodeshoucang",
+    "pages/wode/wodezhanghao/wodezhanghao",
+    "pages/wode/haiziziliao/haiziziliao",
+    "pages/wode/bangdingjiashu/bangdingjiashu",
+    "pages/index/zczh/zczh",
+    "pages/index/delu/delu"
   ],
   "window": {
     "backgroundTextStyle": "light",

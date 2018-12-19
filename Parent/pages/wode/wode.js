@@ -4,13 +4,13 @@ Page({
     routers: [
       {
         name: '我的校车',
-        url: '/pages/aa/aa',
+        url: '/pages/wode/wodexiaoche/wodexiaoche',
         icon: '../images/icon_schoolbus.png',
         code: '10'
       },
       {
         name: '我的账号',
-        url: '/pages/aa/aa',
+        url: '/pages/wode/wodezhanghao/wodezhanghao',
         icon: '../images/icon_account.png',
         code: '11'
       },
@@ -22,13 +22,13 @@ Page({
       },
       {
         name: '孩子资料',
-        url: '/pages/aa/aa',
+        url: '/pages/wode/haiziziliao/haiziziliao',
         icon: '../images/icon_data.png',
         code: '11'
       },
       {
         name: '绑定家属',
-        url: '/pages/aa/aa',
+        url: '/pages/wode/bangdingjiashu/bangdingjiashu',
         icon: '../images/icon_members.png',
         code: '10'
       },
@@ -59,7 +59,29 @@ Page({
     ]
   },
   onLoad: function () {
+    var that = this;
     console.log('onLoad')
-    var that = this
+    wx.request({
+      url: 'http://schoolbus.917tou.com/OrientBase/student',
+      data: that.data.listData,
+      method: 'GET',
+      success: function (res) {
+        console.log('submit success')
+        var data = res.data.data.list
+        var arr = []
+        console.log(data)
+        for (var i = 0; i < data.length; i++) {
+          arr.push(data[i].phone)
+        }
+        console.log(arr)
+      },
+      fail: function (res) {
+        console.log('submit fail');
+      },
+      complete: function (res) {
+        console.log('submit complete');
+      }
+
+    })
   }
 })  
