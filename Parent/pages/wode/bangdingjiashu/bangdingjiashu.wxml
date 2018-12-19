@@ -1,0 +1,10 @@
+<view>
+  <view class="table">
+    <block wx:for="{{listData}}" wx:key="{{code}}">
+      <view class="tr">
+        <view class="td left">{{item.code}}</view>
+        <view class="td right">{{item.text}}</view>
+      </view>
+    </block>
+  </view>
+</view>
