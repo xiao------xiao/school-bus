@@ -1,6 +1,9 @@
 const app = getApp()
+var arr = [], index
+
 Page({
   data: {
+    name:'',
     routers: [
       {
         name: '我的校车',
@@ -58,30 +61,28 @@ Page({
       }
     ]
   },
-  onLoad: function () {
+  onLoad: function (options) {
+    let user = app.searchWord
     var that = this;
-    console.log('onLoad')
     wx.request({
       url: 'http://schoolbus.917tou.com/OrientBase/student',
       data: that.data.listData,
       method: 'GET',
       success: function (res) {
-        console.log('submit success')
-        var data = res.data.data.list
-        var arr = []
-        console.log(data)
-        for (var i = 0; i < data.length; i++) {
-          arr.push(data[i].phone)
-        }
+        arr = res.data.data.list
         console.log(arr)
+        for(var i=0;i<arr.length;i++){
+          if (user == arr[i].phone){
+            index = i
+          }
+        }
+        that.setData({
+          name: arr[index].name
+        })
       },
       fail: function (res) {
         console.log('submit fail');
-      },
-      complete: function (res) {
-        console.log('submit complete');
       }
-
     })
   }
 })  

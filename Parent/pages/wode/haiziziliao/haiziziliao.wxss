@@ -10,8 +10,11 @@
   border-bottom:1px solid #e3e3e3;
   align-items: center;
 }
-.td {
-    width:50%;
+.td:first-child {
+    width:30%;
+}
+.td:last-child {
+    width:70%;
 }
 .left{
   text-align: left;

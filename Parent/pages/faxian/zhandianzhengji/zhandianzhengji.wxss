@@ -1,5 +1,5 @@
 .one{
-  font-size: 15px;
+  font-size: 30rpx;
   margin: 50rpx;
 }
 .two {

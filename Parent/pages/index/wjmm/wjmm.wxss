@@ -62,7 +62,7 @@ form{
 .smsCode{display: flex;justify-content:space-between;border-bottom: 1px solid #ddd;padding-right: 10%}
 .smsCode input{width: 336rpx;}
 .smsCode .getSmsCodeBtn{
-  font-size: 12px; 
+  font-size: 24rpx; 
   color:#fff;
   width:70%;
   box-sizing: border-box; 

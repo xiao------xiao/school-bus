@@ -108,6 +108,7 @@ Page({
       this.setLoginData2();
     }
   },
+  
   switchTab: function () {
     wx.switchTab({
       url: '/pages/shouye/shouye'

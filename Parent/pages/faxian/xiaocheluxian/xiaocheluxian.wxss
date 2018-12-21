@@ -40,7 +40,7 @@
   padding: 12rpx;
 }
 .sous input{
-  font-size: 15px;
+  font-size: 30rpx;
 }
 
 .tab-left,.tab-right{

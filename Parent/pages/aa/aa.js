@@ -1,4 +1,4 @@
-// pages/aa/aa.js
+var app = require('../../app.js')
 Page({
   navigateBack: function () {
     var self = this;

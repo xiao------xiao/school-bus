@@ -1,4 +1,7 @@
 var util = require("../../../utils/util.js");
+const app = getApp()
+var arr = []
+var index
 
 Page({
   data: {
@@ -10,8 +13,22 @@ Page({
     inputPassword: '',
   },
   onLoad: function (options) {
-    // 页面初始化 options为页面跳转所带来的参数
-
+    var that = this;
+    wx.request({
+      url: 'http://schoolbus.917tou.com/OrientBase/student',
+      data: that.data.listData,
+      method: 'GET',
+      success: function (res) {
+        var data = res.data.data.list
+        for (var i = 0; i < data.length; i++) {
+          arr.push(data[i].phone)
+        }
+        console.log(arr)
+      },
+      fail: function (res) {
+        console.log('submit fail');
+      }
+    })
   },
   onReady: function () {
     // 页面渲染完成
@@ -89,7 +106,8 @@ Page({
     var username = param.username.trim();
     var password = param.password.trim();
     var that = this;
-    if ((username == '18861856189') && password == '000000') {
+    index = arr.indexOf(username)+1 
+    if (index && password == username) {
       setTimeout(function () {
         wx.showToast({
           title: '成功',
@@ -98,6 +116,7 @@ Page({
         });
         that.setLoginData2();
         that.switchTab(param);
+        that.search(param);
       }, 2000);
     } else {
       wx.showModal({
@@ -108,7 +127,12 @@ Page({
       this.setLoginData2();
     }
   },
+  search: function (param) {
+    let user = arr[index-1];
+    app.searchWord = user;
+  },
   switchTab: function (param) {
+    getApp().globaIDdata = param
     wx.switchTab({
       url: '/pages/shouye/shouye'
     })

@@ -17,5 +17,5 @@ navigator{
   background-color: #efca31;
   color: #fff;
   padding: 20rpx 50rpx;
-  font-size: 15px;
+  font-size: 30rpx;
 }

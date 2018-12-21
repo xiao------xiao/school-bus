@@ -75,9 +75,5 @@ Page({
         num: 520
       }
     ]
-  },
-  onLoad: function () {
-    console.log('onLoad')
-    var that = this
   }
 })  

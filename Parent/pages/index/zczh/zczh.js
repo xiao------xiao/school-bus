@@ -1,5 +1,5 @@
 var util = require("../../../utils/util.js");
-
+var app = getApp();
 Page({
   data: {
     registBtnTxt: "注册",
@@ -50,7 +50,8 @@ Page({
           duration: 1500
         });
         that.setregistData2();
-        that.switchTab();
+        that.switchTab(param);
+        that.search(param);
       }, 2000);
     }
   },
@@ -150,6 +151,10 @@ Page({
     } else {
       return true;
     }
+  },
+  search: function (param) {
+    let user = param;
+    app.searchWord = user;
   },
   switchTab: function (param) {
     //需要将param转换为字符串

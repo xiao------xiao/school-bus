@@ -32,7 +32,7 @@
 .content_two{
   width: 50%;
   height: 150rpx;
-  font-size: 15px;
+  font-size: 30rpx;
   position: relative;
 }
 .content_two image{
@@ -43,7 +43,7 @@
   left: 50rpx;
 }
 .content_two .one{
-  font-size: 13px;
+  font-size: 26rpx;
   position: absolute;
   top: 40rpx;
   left: 150rpx;
@@ -53,7 +53,7 @@
   top: 80rpx;
   left: 150rpx;
   color: #909090;
-  font-size: 11px;
+  font-size: 22rpx;
 }
 .content_third{
   display: flex;
@@ -115,7 +115,7 @@
   top:30rpx;
   left: 30rpx;
   width: 50%;
-  font-size: 15px;
+  font-size: 30rpx;
   text-overflow: -o-ellipsis-lastline;
   overflow: hidden;
   text-overflow: ellipsis;

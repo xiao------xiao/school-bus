@@ -35,5 +35,31 @@ App({
   },
   globalData: {
     userInfo: null
+  },
+  onLoad: function () {
+    var that = this;
+    console.log('onLoad')
+    wx.request({
+      url: 'http://schoolbus.917tou.com/OrientBase/student',
+      data: that.data.listData,
+      method: 'GET',
+      success: function (res) {
+        console.log('submit success')
+        var data = res.data.data.list
+        var arr = []
+        console.log(data)
+        for (var i = 0; i < data.length; i++) {
+          arr.push(data[i].phone)
+        }
+        console.log(arr)
+      },
+      fail: function (res) {
+        console.log('submit fail');
+      },
+      complete: function (res) {
+        console.log('submit complete');
+      }
+
+    })
   }
 })

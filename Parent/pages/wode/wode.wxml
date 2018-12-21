@@ -3,7 +3,7 @@
   <view class='grzx_content'>
     <view style='font-size: 15px;'>个人中心</view>
     <image src='../images/icon_girl.png'></image>
-    <view>王里</view>
+    <view>{{name}}</view>
   </view>
   <navigator url='/pages/wode/lingjiesongma/lingjiesongma' class='grzx_content_jsm'>
     <image src='../images/icon_children.png'></image>

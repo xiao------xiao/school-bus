@@ -67,9 +67,5 @@ Page({
         time: '下午 4：30'
       }
     ]
-  },
-  onLoad: function () {
-    console.log('onLoad')
-    var that = this
   }
 })  

@@ -1,1 +1,10 @@
-<image class='image' src='../images/banner_route.png'></image>
+<view>
+  <image class='image' src='../images/banner_route.png'></image>
+  <navigator url='{{item.url}}' class='route' wx:for='{{route}}' wx:key='route'>
+    <image class='icon1' src='{{item.icon1}}'></image>
+    <image class='icon2' src='{{item.icon2}}'></image>
+    <view class='route_route'>{{item.route}}</view>
+    <view class='site'>{{item.site}}</view>
+    <image class='icon_comein' src='../images/icon_comein.png'></image>
+  </navigator>
+</view>
