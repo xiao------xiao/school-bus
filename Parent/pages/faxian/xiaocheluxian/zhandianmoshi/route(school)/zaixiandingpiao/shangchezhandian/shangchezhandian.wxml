@@ -1,0 +1,5 @@
+<view class='app'>
+  <view class='site' wx:for='{{site}}' wx:key='{{index}}'>
+    <navigator url='/pages/faxian/xiaocheluxian/zhandianmoshi/route(school)/zaixiandingpiao/zaixiandingpiao?site={{item}}'><view>{{item}}</view></navigator>
+  </view>
+</view>

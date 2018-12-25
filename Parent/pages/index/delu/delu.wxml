@@ -5,7 +5,7 @@
     <form bindsubmit="formSubmit">
         <view class="input-area">
           <image class='one' src='../../images/icon_phone.png'></image>
-          <input id="username" name="username" maxlength='11' type="text" placeholder="请输入手机号码" />
+          <input id="username" name="username" maxlength='11' type="number" placeholder="请输入手机号码" />
           <image class='two' src='../../images/icon_password.png'></image>
           <input id="password" name="password" maxlength='20' type="password" placeholder="请输入密码" />
         </view>

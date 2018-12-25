@@ -1,0 +1,32 @@
+<view class='app'>
+  <view class='header'>
+    <image class='img_zxdp' src='./images/Book-tickets-online.png'></image>
+    <navigator class='site' url='/pages/faxian/xiaocheluxian/zhandianmoshi/route(school)/zaixiandingpiao/shangchezhandian/shangchezhandian'>
+      <image src='./images/point.png'></image>
+      <view>{{site}}</view>
+    </navigator>
+  </view>
+  <view class='container'>
+    <view class='content'>
+      <view>预定小孩</view>
+      <view>{{name}}</view>
+    </view>
+    <view class='content'>
+      <view>预定时间</view>
+      <picker mode="date" value="{{date}}" start="1970-01-01" end="2050-12-31" bindchange="bindDateChangestart">
+        <view style='font-size: 24rpx;color: #909090;' class="picker">{{datestart}}</view>
+      </picker>
+      <view>-</view>
+      <picker mode="date" value="{{date}}" start="1970-01-01" end="2050-12-31" bindchange="bindDateChangeend">
+        <view style='font-size: 24rpx;color: #909090;' class="picker">{{dateend}}</view>
+      </picker>
+    </view>
+    <view class='busFrequency'>
+      <view>坐车频率</view>
+        <view class='week' wx:for='{{week}}' wx:key='{{index}}'>
+          <text data-select="{{item.select}}" class="{{item.select == catalogSelect ? 'active':''}} date {{item.date}}" bindtap='changeColor'>{{item.time}}</text>
+        </view>
+    </view>
+  </view>
+  <button type='submit' bindtap='submit'>提交</button>
+</view>

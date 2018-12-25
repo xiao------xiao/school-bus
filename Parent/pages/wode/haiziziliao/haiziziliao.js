@@ -1,5 +1,5 @@
 const app = getApp()
-var arr = [], index
+var arr=[],index
 
 Page({
   data: {
@@ -26,20 +26,11 @@ Page({
         }
         that.setData({
           name: arr[index].name,
-          gender: arr[index].gender,
+          gender: arr[index].gender==1?'男':'女',
           classname: arr[index].classname,
           phone: arr[index].phone,
           homeAddress: arr[index].homeAddress,
         })
-        if (that.data.gender==1){
-          that.setData({
-            gender: '男'
-          })
-        }else{
-          that.setData({
-            gender: '女'
-          })
-        }
       },
       fail: function (res) {
         console.log('submit fail');

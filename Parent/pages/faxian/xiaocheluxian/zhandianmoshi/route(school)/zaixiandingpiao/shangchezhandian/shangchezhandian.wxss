@@ -1,0 +1,24 @@
+.app{
+  background-color: #fff;
+  height: 100%
+}
+.site{
+  padding:20rpx;
+}
+navigator{
+  background-color: #f1f2f7;
+  text-align: left;
+  font-size: 30rpx;
+  padding: 30rpx 0;
+  border-radius: .5em;
+}
+.site:nth-child(1) navigator{
+  margin-top: 50rpx;
+}
+navigator view{
+  margin-left: 30rpx;
+}
+navigator:hover{
+  background-color: #ebb842;
+  color: #fff;
+}

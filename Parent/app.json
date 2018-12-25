@@ -1,15 +1,26 @@
 {
+  "plugins": {
+    "calendar": {
+      "version": "1.1.3",
+      "provider": "wx92c68dae5a8bb046"
+    },
+    "mapRoute": {
+      "version": "1.0.6",
+      "provider": "wx5bc2ac602a747594"
+    }
+  },
   "pages": [
-    "pages/faxian/xiaocheluxian/zhandianmoshi/Route 1 (school)/Route 1 (school)",
+    "pages/wode/woyaoqingjia/woyaoqingjia",
     "pages/index/index",
-    "pages/faxian/xiaocheluxian/zhandianmoshi/Route 1 (school)/zaixiandingpiao/zaixiandingpiao",
-    "pages/shouye/shouye",
     "pages/faxian/faxian",
+    "pages/faxian/xiaocheluxian/zhandianmoshi/zhandianmoshi",
+    "pages/shouye/shouye",
+    "pages/faxian/xiaocheluxian/zhandianmoshi/route(school)/route(school)",
+    "pages/faxian/xiaocheluxian/zhandianmoshi/route(school)/zaixiandingpiao/zaixiandingpiao",
     "pages/xiaoxi/xiaoxi",
     "pages/wode/wode",
     "pages/aa/aa",
     "pages/index/wjmm/wjmm",
-    "pages/faxian/xiaocheluxian/zhandianmoshi/zhandianmoshi",
     "pages/faxian/xiaocheluxian/ditumoshi/ditumoshi",
     "pages/faxian/zhandianzhengji/zhandianzhengji",
     "pages/faxian/woderili/woderili",
@@ -23,7 +34,9 @@
     "pages/wode/haiziziliao/haiziziliao",
     "pages/wode/bangdingjiashu/bangdingjiashu",
     "pages/index/zczh/zczh",
-    "pages/index/delu/delu"
+    "pages/index/delu/delu",
+    "pages/faxian/zhandianzhengji/xiangxidizhi/xiangxidizhi",
+    "pages/faxian/xiaocheluxian/zhandianmoshi/route(school)/zaixiandingpiao/shangchezhandian/shangchezhandian"
   ],
   "window": {
     "backgroundTextStyle": "light",

@@ -1,0 +1,29 @@
+<view class='app'>
+  <view>
+    <image src='../../images/icon_children.png'></image>
+    <text class='xm'>小孩姓名</text>
+    <text class='name'>李三</text>
+  </view>
+  <view>
+    <image src='../../images/icon_-leave.png'></image>
+    <text class='time'>请假时间</text>
+    <view class='selecttime'>
+      <picker mode="date" value="{{date}}" start="1970-01-01" end="2050-12-31" bindchange="bindDateChangestart">
+        <view style='font-size: 26rpx;color: #e8b502;' class="picker">请选择时间</view>
+      </picker>
+      <view>至</view>
+      <picker mode="date" value="{{date}}" start="1970-01-01" end="2050-12-31" bindchange="bindDateChangeend">
+        <view style='font-size: 26rpx;color: #e8b502;' class="picker">请选择时间</view>
+      </picker>
+    </view>
+  </view>
+  <view>
+    <image src='../../images/icon_why.png'></image>
+    <text class='qjyy'>请假原因</text>
+    <textarea placeholder='请写下您的请假理由'></textarea>
+    <text>病假</text>
+    <text>事假</text>
+    <text>其他</text>
+  </view>
+</view>
+<view>提交</view>

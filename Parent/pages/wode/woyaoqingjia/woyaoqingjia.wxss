@@ -1,0 +1,71 @@
+image{
+  width: 50rpx;
+  height: 50rpx;
+}
+.app{
+  padding: 30rpx;
+}
+.app > view{
+  padding: 50rpx 0;
+}
+.app > view:nth-child(1){
+  border-bottom: 1px solid #e2e2e2;
+  position: relative;
+}
+.xm{
+  position: absolute;
+  top: 60rpx;
+  left: 100rpx;
+  font-size: 30rpx;
+}
+.name{
+  position: absolute;
+  top: 60rpx;
+  right: 0;
+}
+.app > view:nth-child(2){
+  position: relative;
+  margin-bottom: 100rpx;
+}
+.time{
+  position: absolute;
+  top: 60rpx;
+  left: 100rpx;
+  font-size: 30rpx;
+}
+.selecttime picker:nth-child(1){
+  position: absolute;
+  top: 130rpx;
+  left: 20rpx;
+  padding: 30rpx 70rpx;
+  background-color: #fcf6de;
+}
+.selecttime picker:nth-child(3){
+  position: absolute;
+  top: 130rpx;
+  left: 400rpx;
+  padding: 30rpx 70rpx;
+  background-color: #fcf6de;
+}
+.selecttime view:nth-child(2){
+  position: absolute;
+  top: 160rpx;
+  left: 330rpx;
+}
+.app > view:nth-child(3){
+  position: relative;
+}
+.app > view:nth-child(3)::before{
+  content: '';
+  height: 2rpx;
+  background-color: #e2e2e2;
+  position: absolute;
+  top: 100rpx;
+}
+.qjyy{
+  position: absolute;
+  top: 60rpx;
+  left: 100rpx;
+  font-size: 30rpx;
+  border-bottom: 1rpx solid #e2e2e2;
+}

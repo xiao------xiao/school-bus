@@ -7,7 +7,7 @@ Page({
     markers: [],
     controls: [{
       id: 1,
-      iconPath: '../images/icon_sitemode_sel.png',
+      iconPath: './images/jian.png',
       position: {
         left: 320,
         top: 100 - 50,
@@ -18,7 +18,7 @@ Page({
     },
     {
       id: 2,
-      iconPath: '../images/icon_sitemode_sel.png',
+      iconPath: './images/jia.png',
       position: {
         left: 340,
         top: 100 - 50,
@@ -63,7 +63,7 @@ Page({
             longitude: res.longitude,
             width: 50,
             height: 50,
-            iconPath: "../images/icon_sitemode_sel.png",
+            iconPath: "./images/map.png",
             title: "哪里"
 
           }],

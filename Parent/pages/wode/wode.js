@@ -1,5 +1,4 @@
 const app = getApp()
-var arr = [], index
 
 Page({
   data: {
@@ -19,7 +18,7 @@ Page({
       },
       {
         name: '我要请假',
-        url: '/pages/aa/aa',
+        url: '/pages/wode/woyaoqingjia/woyaoqingjia',
         icon: '../images/icon_car.png',
         code: '10'
       },
@@ -62,27 +61,8 @@ Page({
     ]
   },
   onLoad: function (options) {
-    let user = app.searchWord
-    var that = this;
-    wx.request({
-      url: 'http://schoolbus.917tou.com/OrientBase/student',
-      data: that.data.listData,
-      method: 'GET',
-      success: function (res) {
-        arr = res.data.data.list
-        console.log(arr)
-        for(var i=0;i<arr.length;i++){
-          if (user == arr[i].phone){
-            index = i
-          }
-        }
-        that.setData({
-          name: arr[index].name
-        })
-      },
-      fail: function (res) {
-        console.log('submit fail');
-      }
+    this.setData({
+      name: app.name
     })
   }
 })  

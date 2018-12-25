@@ -36,58 +36,18 @@
   width: 100%;
   background-color: #eec315;
   bottom: 0;
+  z-index: -99;
 }
 .site image{
-  background-color:#eec315;
   width:30rpx;
   height:30rpx;
-  z-index: 99;
 }
-.site text{
-  direction:rtl;
-  margin-top: 40rpx;
-  width:30rpx;
-  color: #5a5a5a;
+.site1 {
+  margin: 0 7%;
 }
-.icon1{
-  position: absolute;
-  left: 10%;
-}
-.icon2{
-  position: absolute;
-  left: 30%;
-}
-.icon3{
-  position: absolute;
-  left: 50%;
-}
-.icon4{
-  position: absolute;
-  left: 70%;
-}
-.icon5{
-  position: absolute;
-  left: 90%;
-}
-.text1{
-  position: absolute;
-  left: 10%;
-}
-.text2{
-  position: absolute;
-  left: 30%;
-}
-.text3{
-  position: absolute;
-  left: 50%;
-} 
-.text4{
-  position: absolute;
-  left: 70%;
-}
-.text5{
-  position: absolute;
-  left: 90%;
+.site1 view{
+  writing-mode: vertical-lr;
+  margin-top: 20rpx;
 }
 .footer{
   position: absolute;
