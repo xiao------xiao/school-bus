@@ -1,4 +1,7 @@
 {
   "component": true,
-  "usingComponents": {}
+  "usingComponents": {},
+  "navigationBarTitleText": "消息",
+  "navigationBarBackgroundColor": "#fbb41a",
+  "navigationBarTextStyle": "white"
 }

@@ -2,18 +2,18 @@
   <view>
     <image src='../../images/icon_children.png'></image>
     <text class='xm'>小孩姓名</text>
-    <text class='name'>李三</text>
+    <text class='name'>{{name}}</text>
   </view>
   <view>
     <image src='../../images/icon_-leave.png'></image>
     <text class='time'>请假时间</text>
     <view class='selecttime'>
-      <picker mode="date" value="{{date}}" start="1970-01-01" end="2050-12-31" bindchange="bindDateChangestart">
-        <view style='font-size: 26rpx;color: #e8b502;' class="picker">请选择时间</view>
+      <picker mode="date" value="{{date}}" bindchange="bindDateChangestart">
+        <view style='font-size: 26rpx;color: #e8b502;' class="picker">{{datestart}}</view>
       </picker>
       <view>至</view>
-      <picker mode="date" value="{{date}}" start="1970-01-01" end="2050-12-31" bindchange="bindDateChangeend">
-        <view style='font-size: 26rpx;color: #e8b502;' class="picker">请选择时间</view>
+      <picker mode="date" value="{{date}}" bindchange="bindDateChangeend">
+        <view style='font-size: 26rpx;color: #e8b502;' class="picker">{{dateend}}</view>
       </picker>
     </view>
   </view>
@@ -21,9 +21,9 @@
     <image src='../../images/icon_why.png'></image>
     <text class='qjyy'>请假原因</text>
     <textarea placeholder='请写下您的请假理由'></textarea>
-    <text>病假</text>
-    <text>事假</text>
-    <text>其他</text>
+    <view class='reason' wx:for='{{reason}}' wx:key='{{index}}'>
+      <text data-select="{{index}}" class="{{index == reasonSelect ? 'active':''}} reason{{index}}" bindtap='changeTime'>{{item}}</text>
+    </view>
   </view>
 </view>
-<view>提交</view>
+<button>提交</button>

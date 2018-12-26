@@ -1,6 +1,5 @@
 <view class="app">
     <view class="header">
-      <text class='title'>智慧校车</text>
       <view class="sousuo">
         <navigator class='btn' url='/pages/aa/aa'>
         <image src='../images/icon_search.png'></image>

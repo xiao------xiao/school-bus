@@ -48,7 +48,7 @@ Page({
       },
       {
         name: '接送记录',
-        url: '/pages/aa/aa',
+        url: '/pages/wode/jiesongjilu/jiesongjilu',
         icon: '../images/icon_send.png',
         code: '11'
       },
@@ -62,7 +62,7 @@ Page({
   },
   onLoad: function (options) {
     this.setData({
-      name: app.name
+      name: app.name ? app.name:'读取错误'
     })
   }
 })  

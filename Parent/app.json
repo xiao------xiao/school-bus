@@ -10,15 +10,17 @@
     }
   },
   "pages": [
-    "pages/wode/woyaoqingjia/woyaoqingjia",
     "pages/index/index",
+    "pages/wode/wode",
+    "pages/shouye/shouye",
+    "pages/bb/bb",
+    "pages/wode/bangdingjiashu/bangdingjiashu",
+    "pages/wode/woyaoqingjia/woyaoqingjia",
+    "pages/faxian/xiaocheluxian/zhandianmoshi/route(school)/zaixiandingpiao/zaixiandingpiao",
     "pages/faxian/faxian",
     "pages/faxian/xiaocheluxian/zhandianmoshi/zhandianmoshi",
-    "pages/shouye/shouye",
     "pages/faxian/xiaocheluxian/zhandianmoshi/route(school)/route(school)",
-    "pages/faxian/xiaocheluxian/zhandianmoshi/route(school)/zaixiandingpiao/zaixiandingpiao",
     "pages/xiaoxi/xiaoxi",
-    "pages/wode/wode",
     "pages/aa/aa",
     "pages/index/wjmm/wjmm",
     "pages/faxian/xiaocheluxian/ditumoshi/ditumoshi",
@@ -32,11 +34,12 @@
     "pages/wode/wodexiaoche/wodeshoucang/wodeshoucang",
     "pages/wode/wodezhanghao/wodezhanghao",
     "pages/wode/haiziziliao/haiziziliao",
-    "pages/wode/bangdingjiashu/bangdingjiashu",
     "pages/index/zczh/zczh",
     "pages/index/delu/delu",
     "pages/faxian/zhandianzhengji/xiangxidizhi/xiangxidizhi",
-    "pages/faxian/xiaocheluxian/zhandianmoshi/route(school)/zaixiandingpiao/shangchezhandian/shangchezhandian"
+    "pages/faxian/xiaocheluxian/zhandianmoshi/route(school)/zaixiandingpiao/shangchezhandian/shangchezhandian",
+    "pages/wode/bangdingjiashu/jiashuxinxi/jiashuxinxi",
+    "pages/wode/jiesongjilu/jiesongjilu"
   ],
   "window": {
     "backgroundTextStyle": "light",

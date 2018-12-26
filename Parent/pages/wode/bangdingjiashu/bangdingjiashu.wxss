@@ -1,1 +1,54 @@
-/* pages/wode/bangdingjiashu/bangdingjiashu.wxss */
+.table{
+  background-color: #fff;
+  padding-left: 30rpx;
+  margin-top: 20rpx;
+}
+.tr {
+  display: flex;
+  width: 100%;
+  height: 120rpx;
+  border-top:1px solid #878090;
+  align-items: center;
+}
+.tr:first-child{
+  border: none;
+}
+.td:nth-child(1) {
+    width:20%;
+}
+.td:nth-child(2) {
+    width:50%;
+}
+.td:nth-child(3) {
+    width:20%;
+    border-radius: 1em;
+}
+.left{
+  text-align: right;
+}
+.center{
+  text-align: center;
+  color: #999999;
+}
+.right{
+  text-align: center;
+  color: #fff;
+  background-color: #ebb842;
+  font-size: 24rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+}
+.tjjs{
+  width: 25%;
+  display: flex;
+  margin: 50rpx auto;
+}
+.tjjs image{
+  width: 70rpx;
+  height: 70rpx;
+}
+.tjjs text{
+  height: 70rpx;
+  line-height: 70rpx;
+  margin-left: 20rpx;
+}

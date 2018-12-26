@@ -7,12 +7,9 @@ Page({
   },
   onLoad:function(){
     sites=app.sites
-    console.log(sites)
+    // console.log(sites)
     this.setData({
       site: sites
     })
-  },
-  selectSite:function(e){
-    console.log(this)
   }
 })

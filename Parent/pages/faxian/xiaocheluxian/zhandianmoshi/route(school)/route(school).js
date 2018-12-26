@@ -128,6 +128,6 @@ Page({
     })
     // console.log(this.data.site[this.data.id].site)
     app.sites = this.data.site[this.data.id].site
-    console.log(app.sites)
+    // console.log(app.sites)
   }
 })

@@ -9,11 +9,11 @@ navigator{
   background-color: #f1f2f7;
   text-align: left;
   font-size: 30rpx;
-  padding: 30rpx 0;
+  padding: 20rpx 0;
   border-radius: .5em;
 }
 .site:nth-child(1) navigator{
-  margin-top: 50rpx;
+  margin-top: 30rpx;
 }
 navigator view{
   margin-left: 30rpx;

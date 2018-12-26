@@ -2,9 +2,14 @@
   <view class="table">
     <block wx:for="{{listData}}" wx:key="{{code}}">
       <view class="tr">
-        <view class="td left">{{item.code}}</view>
-        <view class="td right">{{item.text}}</view>
+        <view class="td left">{{item.parent}}</view>
+        <view class="td center">{{item.phone}}</view>
+        <button class='td right'>已验证</button>
       </view>
     </block>
   </view>
+  <navigator class='tjjs' url='/pages/wode/bangdingjiashu/jiashuxinxi/jiashuxinxi'>
+    <image src='./images/icon_add.png'></image>
+    <text>添加家属</text>
+  </navigator>
 </view>

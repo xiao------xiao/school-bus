@@ -4,6 +4,7 @@ image{
 }
 .app{
   padding: 30rpx;
+  background-color: #fff;
 }
 .app > view{
   padding: 50rpx 0;
@@ -14,14 +15,14 @@ image{
 }
 .xm{
   position: absolute;
-  top: 60rpx;
+  top: 55rpx;
   left: 100rpx;
   font-size: 30rpx;
 }
 .name{
   position: absolute;
-  top: 60rpx;
-  right: 0;
+  top: 55rpx;
+  right: 30rpx;
 }
 .app > view:nth-child(2){
   position: relative;
@@ -29,7 +30,7 @@ image{
 }
 .time{
   position: absolute;
-  top: 60rpx;
+  top: 55rpx;
   left: 100rpx;
   font-size: 30rpx;
 }
@@ -64,8 +65,44 @@ image{
 }
 .qjyy{
   position: absolute;
-  top: 60rpx;
+  top: 55rpx;
   left: 100rpx;
   font-size: 30rpx;
-  border-bottom: 1rpx solid #e2e2e2;
+}
+textarea{
+  width: 100%;
+  border-top: 1rpx solid #e2e2e2;
+  margin-top: 20rpx;
+  padding-top: 20rpx;
+  height: 150rpx;
+}
+.reason text{
+  border: 1px solid #e2e2e2;
+  padding: 10rpx 30rpx;
+  border-radius: 1em;
+}
+.reason0{
+  position: absolute;
+  bottom: 0;
+}
+.reason1{
+  position: absolute;
+  bottom: 0;
+  left: 150rpx
+}
+.reason2{
+  position: absolute;
+  bottom: 0;
+  left: 300rpx
+}
+.active{
+  background-color: #ebb842;
+  color: #fff;
+}
+button{
+  margin-top: 50rpx;
+  width: 70%;
+  background-color: #ebb842;
+  border-radius: 1em;
+  color: #fff;
 }
