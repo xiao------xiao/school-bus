@@ -1,127 +1,122 @@
+var app = getApp()
+var locationInfoLongitude, locationInfoLatitude
+const QQMapWX = require('../../../../utils/qqmap-wx-jssdk.min.js');
+const wxMap = new QQMapWX({
+  key: '3RCBZ-OXGKF-FGDJZ-JJQ76-PHRIH-2KFJZ' // 必填
+})
+
+
 Page({
   data: {
-    Height: 0,
-    scale: 13,
-    latitude: "",
-    longitude: "",
-    markers: [],
-    controls: [{
-      id: 1,
-      iconPath: './images/jian.png',
-      position: {
-        left: 320,
-        top: 100 - 50,
-        width: 20,
-        height: 20
-      },
-      clickable: true
-    },
-    {
-      id: 2,
-      iconPath: './images/jia.png',
-      position: {
-        left: 340,
-        top: 100 - 50,
-        width: 20,
-        height: 20
-      },
-      clickable: true
-    }
-    ],
-    circles: []
-
+    map_width: 380,
+    map_height: 380,
+    longitude:'',
+    latitude:'',
+    address:''
   },
-
+  // show current position
   onLoad: function () {
-    var _this = this;
-
+    var that = this;
+    // 获取定位，并把位置标示出来
+    app.getLocationInfo(function (locationInfo) {
+      console.log('map', locationInfo);
+      locationInfoLongitude = locationInfo.longitude
+      locationInfoLatitude = locationInfo.latitude
+      that.setData({
+        longitude: locationInfo.longitude,
+        latitude: locationInfo.latitude,
+        markers: [
+          {
+            id: 0,
+            iconPath: "./images/ic_position.png",
+            longitude: locationInfo.longitude,
+            latitude: locationInfo.latitude,
+            width: 30,
+            height: 30
+          }
+        ]
+      })
+    })
+    //set the width and height
+    // 动态设置map的宽和高
     wx.getSystemInfo({
       success: function (res) {
-        //设置map高度，根据当前设备宽高满屏显示
-        _this.setData({
-          view: {
-            Height: res.windowHeight
-          }
-
-        })
-
-
-
-      }
-    })
-
-    wx.getLocation({
-      type: 'wgs84', // 默认为 wgs84 返回 gps 坐标，gcj02 返回可用于 wx.openLocation 的坐标
-      success: function (res) {
-
-        _this.setData({
-          latitude: res.latitude,
-          longitude: res.longitude,
-          markers: [{
-            id: "1",
-            latitude: res.latitude,
-            longitude: res.longitude,
-            width: 50,
-            height: 50,
-            iconPath: "./images/map.png",
-            title: "哪里"
-
-          }],
-          circles: [{
-            latitude: res.latitude,
-            longitude: res.longitude,
-            color: '#FF0000DD',
-            fillColor: '#7cb5ec88',
-            radius: 3000,
-            strokeWidth: 1
+        console.log('getSystemInfo');
+        console.log(res.windowWidth);
+        that.setData({
+          map_width: res.windowWidth,
+          map_height: res.windowWidth,
+          controls: [{
+            id: 1,
+            iconPath: './images/ic_location.png',
+            position: {
+              left: res.windowWidth / 2 - 8,
+              top: res.windowWidth / 2 - 16,
+              width: 30,
+              height: 30
+            },
+            clickable: true
           }]
-
         })
       }
-
     })
 
   },
-
   regionchange(e) {
-    console.log("regionchange===" + e.type)
+    // 地图发生变化的时候，获取中间点，也就是用户选择的位置
+    if (e.type == 'end') {
+      var that = this;
+      this.mapCtx = wx.createMapContext("map4select");
+      this.mapCtx.getCenterLocation({
+        success: function (res) {
+          that.setData({
+            longitude: res.longitude,
+            latitude: res.latitude,
+          })
+        }
+      })
+    }
+  },
+  markertap(e) {
+    console.log(e)
+  },
+  location:function(){
+    this.setData({
+      longitude:locationInfoLongitude,
+      latitude:locationInfoLatitude
+    })
   },
 
-  //点击merkers
-  markertap(e) {
-    console.log(e.markerId)
-
-    wx.showActionSheet({
-      itemList: ["A"],
+  onShow() {
+    /**经纬度逆解析 */
+    this.reverseGeocoder()
+  },
+  /**经纬度逆解析 */
+  reverseGeocoder() {
+    const that = this;
+    wx.getLocation({
+      type: 'gcj02',
       success: function (res) {
-        console.log(res.tapIndex)
+        var latitude = res.latitude
+        var longitude = res.longitude
+        wxMap.reverseGeocoder({
+          location: {
+            latitude: latitude,
+            longitude: longitude
+          },
+          success: function (res) {
+            // console.log(res.result)
+            var address = res.result.address
+            console.log(address);
+            that.setData({
+              address,
+            })
+          },
+        });
       },
-      fail: function (res) {
-        console.log(res.errMsg)
+      fail(res) {
+        console.log(res)
       }
     })
-  },
-
-  //点击缩放按钮动态请求数据
-  controltap(e) {
-    var that = this;
-    console.log("scale===" + this.data.scale)
-    if (e.controlId === 1) {
-      // if (this.data.scale === 13) {
-      that.setData({
-        scale: --this.data.scale
-      })
-      // }
-    } else {
-      //  if (this.data.scale !== 13) {
-      that.setData({
-        scale: ++this.data.scale
-      })
-      // }
-    }
-
-
-  },
-
-
+  }
 })

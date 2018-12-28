@@ -4,7 +4,11 @@ var app=getApp()
 
 Page({
   data:{
-    reason: ['病假', '事假','其他'],
+    reason: [
+      { value: '病假', checked: 'true'},
+      { value: '事假' },
+      { value: '其他' }
+      ],
     reasonSelect: 0,
     datestart:'请选择时间',
     dateend:'请选择时间',
@@ -20,12 +24,6 @@ Page({
       name:app.name
     });
   },
-  changeTime: function (data) {
-    var that = this
-    that.setData({//把选中值放入判断值
-      reasonSelect: data.currentTarget.dataset.select
-    })
-  },
   bindDateChangestart: function (e) {
     console.log( e.detail.value)
     this.setData({
@@ -36,6 +34,12 @@ Page({
     console.log( e.detail.value)
     this.setData({
       dateend: e.detail.value
+    })
+  },
+  formSubmit(e) {
+    console.log('form发生了submit事件，携带数据为：', e.detail.value)
+    wx.navigateTo({
+      url: '/pages/aa/aa',
     })
   }
 })

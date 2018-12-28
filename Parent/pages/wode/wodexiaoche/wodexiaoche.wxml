@@ -2,11 +2,13 @@
 <view>
   <view class='tab-wrapper'>
     <view class='ms left'>
-      <image src='./images/icon_service.png'></image>
+      <image class='{{currentTab === 0 ? "img-active":""}}' src='./images/icon_sitemode.png'></image>
+      <image class='{{currentTab === 1 ? "img-active":""}}' src='./images/icon_sitemode_sel.png'></image>
       <text id='tableft' class='tab-left {{currentTab === 0 ? "tab-active":""}}' bindtap='switchTab'>我的预定</text>
     </view>
     <view class='ms'>
-      <image src='./images/icon_collection.png'></image>
+      <image class='{{currentTab === 1 ? "img-active":""}}' src='./images/icon_service.png'></image>
+      <image class='{{currentTab === 0 ? "img-active":""}}' src='./images/icon_service_sel.png'></image>
       <text id='tabright' class='tab-right {{currentTab === 1 ? "tab-active" : ""}}' bindtap='switchTab'>我的收藏</text>
     </view>
   </view>

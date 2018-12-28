@@ -11,7 +11,7 @@ Page({
       {
         date:'Monday',
         time: '星期一',
-        select:1
+        checked: 'true'
       },
       {
         date: 'Tuesday',
@@ -57,12 +57,6 @@ Page({
       dateend: time
     })
   },
-  changeColor:function(data){
-    var that = this
-    that.setData({//把选中值放入判断值
-      catalogSelect: data.currentTarget.dataset.select
-    })
-  },
   bindDateChangestart: function (e) {
     console.log(e.detail.value)
     this.setData({
@@ -76,6 +70,9 @@ Page({
     })
   },
   formSubmit:function(e){
-    
+    console.log(e.detail.value)
+    wx.navigateTo({
+      url: '/pages/aa/aa',
+    })
   }
 })

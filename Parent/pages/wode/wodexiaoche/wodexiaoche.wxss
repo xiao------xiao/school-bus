@@ -32,3 +32,6 @@
 .tab-active{
   color: black;
 }
+.img-active{
+  display: none;
+}

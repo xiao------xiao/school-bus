@@ -1,32 +1,37 @@
-<form class='app' bindsubmit="formSubmit">
+<form bindsubmit="formSubmit">
+<view class='app'>
   <view class='header'>
     <image class='img_zxdp' src='./images/Book-tickets-online.png'></image>
     <navigator class='site' url='/pages/faxian/xiaocheluxian/zhandianmoshi/route(school)/zaixiandingpiao/shangchezhandian/shangchezhandian'>
       <image src='./images/point.png'></image>
-      <view>{{site}}</view>
+      <input name='site' value='{{site}}'></input>
     </navigator>
   </view>
   <view class='container'>
-    <view class='content'>
+    <view class='ydxh'>
       <view>预定小孩</view>
-      <view>{{name}}</view>
+      <input name='name' value='{{name}}'></input>
+      <!-- <input name='name' value='张三'></input> -->
     </view>
-    <view class='content'>
+    <view class='ydsj'>
       <view>预定时间</view>
-      <picker mode="date" value="{{date}}" start="1970-01-01" end="2050-12-31" bindchange="bindDateChangestart">
+      <picker name='startdate' mode="date" value="{{datestart}}" bindchange="bindDateChangestart">
         <view style='font-size: 24rpx;color: #909090;' class="picker">{{datestart}}</view>
       </picker>
-      <view>-</view>
-      <picker mode="date" value="{{date}}" start="1970-01-01" end="2050-12-31" bindchange="bindDateChangeend">
+      <view style='margin-left: 50rpx;'>-</view>
+      <picker name='enddate' mode="date" value="{{dateend}}" bindchange="bindDateChangeend">
         <view style='font-size: 24rpx;color: #909090;' class="picker">{{dateend}}</view>
       </picker>
     </view>
-    <view class='busFrequency'>
+    <view class='zcpl'>
       <view>坐车频率</view>
-        <view class='week' wx:for='{{week}}' wx:key='{{index}}'>
-          <text data-select="{{item.select}}" class="{{item.select == catalogSelect ? 'active':''}} date {{item.date}}" bindtap='changeColor'>{{item.time}}</text>
-        </view>
+      <checkbox-group name='date'>
+        <label wx:for="{{week}}" wx:key='{{index}}' value='item.time'>
+        <checkbox class="checkbox" color='#ebb842' value="{{item.time}}" checked="{{item.checked}}">{{item.time}}</checkbox>
+        </label>
+      </checkbox-group>
     </view>
   </view>
   <button formType="submit">提交</button>
+  </view>
 </form>

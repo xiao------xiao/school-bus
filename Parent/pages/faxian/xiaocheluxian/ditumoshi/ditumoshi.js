@@ -1,127 +1,38 @@
+// 引入SDK核心类
+var QQMapWX = require('../../../../utils/qqmap-wx-jssdk.min.js');
+var qqmap = new QQMapWX({
+  //在腾讯地图开放平台申请密钥 http://lbs.qq.com/mykey.html
+  key: '3RCBZ-OXGKF-FGDJZ-JJQ76-PHRIH-2KFJZ'
+});
 Page({
   data: {
-    Height: 0,
-    scale: 13,
-    latitude: "",
-    longitude: "",
-    markers: [],
-    controls: [{
-      id: 1,
-      iconPath: '../images/icon_sitemode_sel.png',
-      position: {
-        left: 320,
-        top: 100 - 50,
-        width: 20,
-        height: 20
-      },
-      clickable: true
-    },
-    {
-      id: 2,
-      iconPath: '../images/icon_sitemode_sel.png',
-      position: {
-        left: 340,
-        top: 100 - 50,
-        width: 20,
-        height: 20
-      },
-      clickable: true
-    }
-    ],
-    circles: []
-
+    myLatitude: "",
+    myLongitude: "",
+    myAddress: ""
   },
-
   onLoad: function () {
-    var _this = this;
-
-    wx.getSystemInfo({
-      success: function (res) {
-        //设置map高度，根据当前设备宽高满屏显示
-        _this.setData({
-          view: {
-            Height: res.windowHeight
-          }
-
-        })
-
-
-
-      }
-    })
-
+    var that = this
+    //用微信提供的api获取经纬度
     wx.getLocation({
-      type: 'wgs84', // 默认为 wgs84 返回 gps 坐标，gcj02 返回可用于 wx.openLocation 的坐标
+      type: 'wgs84',
       success: function (res) {
-
-        _this.setData({
-          latitude: res.latitude,
-          longitude: res.longitude,
-          markers: [{
-            id: "1",
-            latitude: res.latitude,
-            longitude: res.longitude,
-            width: 50,
-            height: 50,
-            iconPath: "../images/icon_sitemode_sel.png",
-            title: "哪里"
-
-          }],
-          circles: [{
-            latitude: res.latitude,
-            longitude: res.longitude,
-            color: '#FF0000DD',
-            fillColor: '#7cb5ec88',
-            radius: 3000,
-            strokeWidth: 1
-          }]
-
+        that.setData({ myLatitude: res.latitude, myLongitude: res.longitude })
+        //用腾讯地图的api，根据经纬度获取城市
+        qqmap.reverseGeocoder({
+          location: {
+            latitude: that.data.myLatitude,
+            longitude: that.data.myLongitude
+          },
+          success: function (res) {
+            console.log(res)
+            var a = res.result.address_component
+            //获取市和区（区可能为空）
+            that.setData({ myAddress: a.city + a.district })
+            //控制台输出结果
+            console.log(that.data.myAddress)
+          }
         })
       }
-
     })
-
-  },
-
-  regionchange(e) {
-    console.log("regionchange===" + e.type)
-  },
-
-  //点击merkers
-  markertap(e) {
-    console.log(e.markerId)
-
-    wx.showActionSheet({
-      itemList: ["A"],
-      success: function (res) {
-        console.log(res.tapIndex)
-      },
-      fail: function (res) {
-        console.log(res.errMsg)
-      }
-    })
-  },
-
-  //点击缩放按钮动态请求数据
-  controltap(e) {
-    var that = this;
-    console.log("scale===" + this.data.scale)
-    if (e.controlId === 1) {
-      // if (this.data.scale === 13) {
-      that.setData({
-        scale: --this.data.scale
-      })
-      // }
-    } else {
-      //  if (this.data.scale !== 13) {
-      that.setData({
-        scale: ++this.data.scale
-      })
-      // }
-    }
-
-
-  },
-
-
+  }
 })

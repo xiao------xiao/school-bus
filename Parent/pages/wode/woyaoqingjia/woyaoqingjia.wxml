@@ -1,29 +1,36 @@
-<view class='app'>
-  <view>
-    <image src='../../images/icon_children.png'></image>
-    <text class='xm'>小孩姓名</text>
-    <text class='name'>{{name}}</text>
-  </view>
-  <view>
-    <image src='../../images/icon_-leave.png'></image>
-    <text class='time'>请假时间</text>
+<form bindsubmit="formSubmit">
+  <view class='app'>
+    <view class='xm'>
+      <image src='../../images/icon_children.png'></image>
+      <text>小孩姓名</text>
+      <input class='name' placeholder='{{name}}' name='name' value='{{name}}'></input>
+      <!-- <input class='name' placeholder='李三' name='name' value='李三'></input> -->
+    </view>
+    <view class='qj'>
+      <image src='../../images/icon_-leave.png'></image>
+      <text>请假时间</text>
+    </view>
     <view class='selecttime'>
-      <picker mode="date" value="{{date}}" bindchange="bindDateChangestart">
+      <picker mode="date" value="{{date}}" bindchange="bindDateChangestart" name='startdate' value='{{datestart}}'>
         <view style='font-size: 26rpx;color: #e8b502;' class="picker">{{datestart}}</view>
       </picker>
-      <view>至</view>
-      <picker mode="date" value="{{date}}" bindchange="bindDateChangeend">
+      <view class='center'>至</view>
+      <picker mode="date" value="{{date}}" bindchange="bindDateChangeend" name='enddate' value='{{dateend}}'>
         <view style='font-size: 26rpx;color: #e8b502;' class="picker">{{dateend}}</view>
       </picker>
     </view>
-  </view>
-  <view>
-    <image src='../../images/icon_why.png'></image>
-    <text class='qjyy'>请假原因</text>
-    <textarea placeholder='请写下您的请假理由'></textarea>
-    <view class='reason' wx:for='{{reason}}' wx:key='{{index}}'>
-      <text data-select="{{index}}" class="{{index == reasonSelect ? 'active':''}} reason{{index}}" bindtap='changeTime'>{{item}}</text>
+    <view class='qjyy'>
+      <image src='../../images/icon_why.png'></image>
+      <text class='qjyy'>请假原因</text>
     </view>
+    <textarea class='leaveReason' placeholder='请写下您的请假理由' name='leaveReason'></textarea>
+    <radio-group class="reason" name='reason'>
+      <label wx:for="{{reason}}" wx:key='{{index}}'>
+      <radio color='#fbb519' class="radio" value='{{item.value}}' checked="{{item.checked}}">{{item.value}}</radio>          
+      </label>
+    </radio-group>
   </view>
-</view>
-<button>提交</button>
+  <button form-type="submit">提交</button>
+</form>
+
+<!-- class="{{index == reasonSelect ? 'active':''}} reason{{index}}" -->
