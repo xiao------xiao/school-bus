@@ -62,7 +62,7 @@ Page({
   },
   onLoad: function (options) {
     this.setData({
-      name: app.name ? app.name:'读取错误'
+      name: app.children.name ? app.children.name:'读取错误'
     })
   }
 })  

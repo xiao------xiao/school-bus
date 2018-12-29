@@ -1,4 +1,6 @@
+var requestQ = require('../../utils/request.js')
 const app = getApp()
+
 Page({
   data: {
     routers: [
@@ -75,5 +77,14 @@ Page({
         num: 520
       }
     ]
+  },
+  onLoad:function(){
+    requestQ.sendRequest('http://schoolbus.917tou.com/OrientBase/parentServices/InstanceRoutes', 'GET', { studentId:5 })
+      .then(function (response) {
+        app.remarks = response.data.data.list
+        console.log(app.remarks)
+      }, function (error) {
+        console.log(error);
+      })
   }
 })  

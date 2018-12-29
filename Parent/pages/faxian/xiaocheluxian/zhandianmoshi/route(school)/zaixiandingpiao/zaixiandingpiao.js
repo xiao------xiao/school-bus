@@ -1,8 +1,10 @@
 const app = getApp()
 var util = require('../../../../../../utils/util.js');
+var requestQ = require('../../../../../../utils/request.js')
 
 Page({
   data:{
+    siteid:'',
     site:'',
     name:'',
     datestart:'',
@@ -11,7 +13,8 @@ Page({
       {
         date:'Monday',
         time: '星期一',
-        checked: 'true'
+        checked: 'true',
+        select:1
       },
       {
         date: 'Tuesday',
@@ -51,16 +54,19 @@ Page({
     var time = util.formatTime(new Date());
     // 再通过setData更改Page()里面的data，动态更新页面的数据
     this.setData({
-      name: app.name,
+      name: app.children.name,
       site: options.site ? options.site : '请选择上车站点',
+      siteid: options.siteid ? options.siteid : '',
       datestart: time,
       dateend: time
     })
+
   },
   bindDateChangestart: function (e) {
     console.log(e.detail.value)
     this.setData({
-      datestart: e.detail.value
+      datestart: e.detail.value,
+      dateend: e.detail.value
     })
   },
   bindDateChangeend: function (e) {
@@ -70,9 +76,56 @@ Page({
     })
   },
   formSubmit:function(e){
+    var that = this
     console.log(e.detail.value)
-    wx.navigateTo({
-      url: '/pages/aa/aa',
-    })
+    if (e.detail.value.site =='请选择上车站点'){
+      wx.showToast({
+        title: '请选择站点!'
+      })
+    } else {
+      for (var i = 0; i < e.detail.value.date.length;i++){//星期转换成数字
+        if (e.detail.value.date[i]=='星期一'){
+          e.detail.value.date[i]=1
+        } else if (e.detail.value.date[i] == '星期二'){
+          e.detail.value.date[i] = 2
+        } else if (e.detail.value.date[i] == '星期三') {
+          e.detail.value.date[i] = 3
+        } else if (e.detail.value.date[i] == '星期四') {
+          e.detail.value.date[i] = 4
+        } else if (e.detail.value.date[i] == '星期五') {
+          e.detail.value.date[i] = 5
+        } else if (e.detail.value.date[i] == '星期六') {
+          e.detail.value.date[i] = 6
+        }else{
+          e.detail.value.date[i] = 7
+        }
+      }
+      var orderRule = (e.detail.value.date).join()//数组转换成字符串
+      // console.log(orderRule)
+      var data = {
+        userId: app.children.id,
+        studentId: app.children.id,
+        beginDate: e.detail.value.startdate,
+        endDate: e.detail.value.enddate,
+        stationId: that.data.siteid,
+        orderRule: orderRule,
+      }
+      console.log(data)
+      requestQ.sendRequest('http://schoolbus.917tou.com/OrientBase/parentServices/orders', 'POST', data)
+        .then(function (response) {
+          console.log(response)
+          wx.navigateBack({
+            delta: 99,
+            success() {
+              wx.showToast({
+                title: '提交成功',
+              })
+            }
+          })
+        }, function (error) {
+          console.log(error);
+        })
+
+    }
   }
 })

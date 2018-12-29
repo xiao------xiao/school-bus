@@ -1,8 +1,8 @@
 <view>
   <view class="table">
-    <block wx:for="{{listData}}" wx:key="{{code}}">
+    <block wx:for="{{listData}}" wx:key="{{index}}">
       <view class="tr">
-        <view class="td left">{{item.parent}}</view>
+        <view class="td left">{{item.role}}</view>
         <view class="td center">{{item.phone}}</view>
         <button class='td right'>已验证</button>
       </view>

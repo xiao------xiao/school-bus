@@ -24,7 +24,7 @@
     </view>
     <view class="tr">
       <view class="td left">所属学校</view>
-      <view class="td right"></view>
+      <view class="td right">{{schoolname}}</view>
     </view>
   </view>
 </view>

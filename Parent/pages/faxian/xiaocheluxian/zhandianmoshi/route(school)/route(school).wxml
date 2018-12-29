@@ -1,6 +1,6 @@
 <view style='padding:30rpx;'>
   <view class='price'>100-200元</view>
-  <view style='font-size: 15px;'>{{startEnd[id]}}</view>
+  <view style='font-size: 15px;'>{{startEnd[id].remark}}</view>
   <view class='time'>
     <text>早</text>
     <text>08：00</text>
@@ -8,9 +8,9 @@
     <text>15：00</text>
   </view>
   <view class='site'>
-    <view class='site1' wx:for='{{site[id].site}}' wx:key='{{index}}'>
+    <view class='site1' wx:for='{{site[id].stations}}' wx:key='{{index}}'>
       <image src='./images/arrow.png'></image>
-      <view>{{item}}</view>
+      <view>{{item.name}}</view>
     </view>
   </view>
   <view class='footer'>

@@ -1,4 +1,4 @@
-var app = require('../../app.js')
+var app = getApp()
 Page({
   navigateBack: function () {
     var self = this;
@@ -17,5 +17,8 @@ Page({
     } else {
       wx.navigateBack({ changed: true });//返回上一页
     }
+  },
+  onLoad:function(){
+    // console.log(app.sites)
   }
 })

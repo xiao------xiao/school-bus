@@ -1,8 +1,8 @@
 <view>
   <image class='image' src='../images/banner_route.png'></image>
-  <navigator url='{{item.url}}?id={{index}}' class='route' wx:for='{{route}}' wx:key='index'>
-    <image class='icon1' src='{{item.icon1}}'></image>
-    <image class='icon2' src='{{item.icon2}}'></image>
+  <navigator url='/pages/faxian/xiaocheluxian/zhandianmoshi/route(school)/route(school)?id={{index}}' class='route' wx:for='{{route}}' wx:key='index'>
+    <image class='icon1' src='../images/icon_collection.png'></image>
+    <image class='icon2' src='../images/icon_bus.png'></image>
     <view class='route_route'>{{item.route}}</view>
     <view class='site'>{{item.site}}</view>
     <image class='icon_comein' src='../images/icon_comein.png'></image>

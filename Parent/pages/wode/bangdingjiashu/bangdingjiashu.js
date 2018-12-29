@@ -1,9 +1,25 @@
+var app = getApp()
+var parent
+
 Page({
   data: {
-    listData: [
-      { "parent": "父亲", "phone": "13606156895"},
-      { "parent": "父亲", "phone": "13861547889" },
-      { "parent": "爷爷", "phone": "13812506494" }
-    ]
+    listData: ''
+  },
+  onLoad:function(){
+    var that = this
+    wx.request({
+      url: 'http://schoolbus.917tou.com/OrientBase/parentServices/baseInfo/parentInfos',
+      data:{
+        studentId: app.children.id
+      },
+      method:'GET',
+      success(res){
+        parent = res.data.data
+        // console.log(parent)
+        that.setData({
+          listData: parent
+        })
+      }
+    })
   }
 })

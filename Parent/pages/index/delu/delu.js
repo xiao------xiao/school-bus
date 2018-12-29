@@ -48,6 +48,9 @@ Page({
   },
   formSubmit: function (e) {
     var param = e.detail.value;
+    app.userphone = e.detail.value.username; // 用户手机号码
+    app.userpassword = e.detail.value.password;// 用户密码
+    // console.log(app.userphone, app.userpassword)
     this.mysubmit(param);
   },
   mysubmit: function (param) {
@@ -116,7 +119,6 @@ Page({
         });
         that.setLoginData2();
         that.switchTab(param);
-        that.search(param);
       }, 2000);
     } else {
       wx.showModal({
@@ -126,10 +128,6 @@ Page({
       });
       this.setLoginData2();
     }
-  },
-  search: function (param) {
-    let user = arr[index-1];
-    app.searchWord = user;
   },
   switchTab: function (param) {
     getApp().globaIDdata = param
