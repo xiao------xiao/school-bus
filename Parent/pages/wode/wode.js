@@ -42,7 +42,7 @@ Page({
       },
       {
         name: '意见反馈',
-        url: '/pages/aa/aa',
+        url: '/pages/wode/yijianfankui/yijianfankui',
         icon: '../images/icon_feedback.png',
         code: '10'
       },
