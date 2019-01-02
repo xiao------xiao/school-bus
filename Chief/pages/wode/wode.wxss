@@ -1,0 +1,47 @@
+.bg_chief{
+  width:100%;
+  height: 300rpx;
+}
+.icon_head{
+  width: 200rpx;
+  height: 200rpx;
+  position: absolute;
+  top: 50rpx;
+  left: 40%;
+}
+.content{
+  margin-top: 30rpx;
+}
+.content_one{
+  display: flex;
+  padding: 30rpx;
+  border-bottom: 1px solid #e2e2e2;
+  position: relative;
+}
+.content_one:last-child{
+  border: none;
+}
+.content_one view{
+  height: 50rpx;
+  line-height: 50rpx;
+  margin-left: 30rpx;
+  font-size: 30rpx;
+}
+.content_one image:first-child{
+  width: 50rpx;
+  height: 50rpx;
+}
+.content_one image:last-child{
+  width: 20rpx;
+  height: 20rpx;
+  position: absolute;
+  top: 50rpx;
+  right: 30rpx;
+}
+.btn{
+  width: 70%;
+  border-radius: 2em;
+  background-color: #ebb842;
+  margin-top: 50rpx;
+  color: #fff;
+}

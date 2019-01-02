@@ -1,0 +1,7 @@
+<!--pages/wode/yijianfankui/yijianfankui.wxml-->
+<view>
+  <view class='container'>
+    <textarea></textarea>
+    <image src='../../images/pic_upload.png'></image>
+  </view>
+</view>

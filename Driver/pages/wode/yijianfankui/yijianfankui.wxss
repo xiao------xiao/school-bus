@@ -1,0 +1,12 @@
+.container{
+  background-color: #fff;
+}
+textarea{
+  color: #e2e2e2;
+  font-size: 30rpx;
+  padding: 30rpx;
+}
+image{
+  width: 200rpx;
+  height: 200rpx;
+}

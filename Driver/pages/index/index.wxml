@@ -1,0 +1,14 @@
+<view class='app'>
+    <swiper>
+      <swiper-item>
+        <image src='../images/loading1.png'></image>
+      </swiper-item>
+      <swiper-item>
+        <image src='../images/loading2.png'></image>
+      </swiper-item>
+      <swiper-item>
+        <image src='../images/loading3.png'></image>
+        <navigator url='/pages/index/delu/delu'>登 录</navigator>
+      </swiper-item>
+    </swiper>
+</view>
