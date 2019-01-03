@@ -1,6 +1,4 @@
-// pages/wode/woyaoqingjia/woyaoqingjia.js
 var util = require('../../../utils/util.js');
-var requestQ = require('../../../utils/request.js')
 var app=getApp()
 
 Page({
@@ -62,20 +60,25 @@ Page({
         leaveStatus:0,
         targetUserId: app.children.id
       }
-      requestQ.sendRequest('http://schoolbus.917tou.com/OrientBase/parentServices/attendances', 'POST', data)
-        .then(function (response) {
-          console.log(response.data.data)
+      wx.request({
+        url: 'http://schoolbus.917tou.com/OrientBase/parentServices/attendances',
+        data:data,
+        method:'POST',
+        success(res){
+          console.log(res.data.data)
           wx.navigateBack({
-            delta:1,
-            success(){
+            delta: 1,
+            success() {
               wx.showToast({
                 title: '请假成功',
               })
             }
           })
-        }, function (error) {
-          console.log(error);
-        })
+        },
+        fail(err){
+          console.log(err)
+        }
+      })
     }
   }
 })

@@ -1,4 +1,3 @@
-var requestQ = require('../../utils/request.js')
 const app = getApp()
 
 Page({
@@ -79,12 +78,19 @@ Page({
     ]
   },
   onLoad:function(){
-    requestQ.sendRequest('http://schoolbus.917tou.com/OrientBase/parentServices/InstanceRoutes', 'GET', { studentId:5 })
-      .then(function (response) {
-        app.remarks = response.data.data.list
+    wx.request({
+      url: 'http://schoolbus.917tou.com/OrientBase/parentServices/InstanceRoutes',
+      data:{
+        studentId:5
+      },
+      method:'GET',
+      success(res){
+        app.remarks = res.data.data.list
         console.log(app.remarks)
-      }, function (error) {
-        console.log(error);
-      })
+      },
+      fail(err){
+        console.log(err)
+      }
+    })
   }
 })  

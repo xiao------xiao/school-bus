@@ -1,4 +1,3 @@
-var requestQ = require('../../utils/request.js')
 const app = getApp()
 
 Page({
@@ -79,12 +78,16 @@ Page({
     ]
   },
   onLoad: function () {
-    requestQ.sendRequest('http://schoolbus.917tou.com/OrientBase/chiefs/'+app.chiefId, 'GET')
-      .then(function (res) {
+    wx.request({
+      url: 'http://schoolbus.917tou.com/OrientBase/chiefs/' + app.chiefId,
+      method:'GET',
+      success(res){
         app.chiefName = res.data.data.name //获取乘务长姓名
         // console.log(app.chiefName)
-      }, function (err) {
-        console.log(err);
-      })
+      },
+      fail(err){
+        console.log(err)
+      }
+    })
   }
 })  

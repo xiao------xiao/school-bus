@@ -1,4 +1,3 @@
-var requestQ = require('../../utils/request.js')
 const app = getApp()
 
 Page({
@@ -79,12 +78,16 @@ Page({
     ]
   },
   onLoad: function () {
-    requestQ.sendRequest('http://schoolbus.917tou.com/OrientBase/drivers/' + app.driverId, 'GET')
-      .then(function (res) {
+    wx.request({
+      url: 'http://schoolbus.917tou.com/OrientBase/drivers/' + app.driverId,
+      method:'GET',
+      success(res){
         app.driverName = res.data.data.name//获取司机姓名
-        // console.log(app.driverName)
-      }, function (err) {
+        console.log(app.driverName)
+      },
+      fail(err){
         console.log(err);
-      })
+      }
+    })
   }
 })  

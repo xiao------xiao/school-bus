@@ -1,6 +1,5 @@
 var util = require("../../../../utils/util.js");
 var app = getApp()
-var requestQ = require('../../../../utils/request.js')
 
 Page({
   data: {},
@@ -45,9 +44,12 @@ Page({
         parent:1
       }
       console.log(data)
-      requestQ.sendRequest('http://schoolbus.917tou.com/OrientBase/parentServices/baseInfo/parentInfos?studentId='+app.children.id, 'POST', data)
-        .then(function (response) {
-          console.log(response.data.data)
+      wx.request({
+        url: 'http://schoolbus.917tou.com/OrientBase/parentServices/baseInfo/parentInfos?studentId=' + app.children.id,
+        data:data,
+        method:'POST',
+        success(res){
+          console.log(res.data.data)
           wx.navigateBack({
             delta: 1,
             success() {
@@ -56,22 +58,11 @@ Page({
               })
             }
           })
-        }, function (error) {
-          console.log(error);
-        })
-      // wx.request({
-      //   url: 'http://schoolbus.917tou.com/OrientBase/parentServices/baseInfo/parentInfos',
-      //   data: {
-      //     studentId: app.children.id,
-      //     name: e.detail.value.name,
-      //     phone: e.detail.value.tel,
-      //     role: e.detail.value.parent
-      //   },
-      //   method: 'POST',
-      //   success(res) {
-      //     console.log(res)
-      //   }
-      // })
+        },
+        fail(err){
+          console.log(error)
+        }
+      })
     }
   }
   })

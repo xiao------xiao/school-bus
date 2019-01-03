@@ -1,6 +1,5 @@
 const app = getApp()
 var util = require('../../../../../../utils/util.js');
-var requestQ = require('../../../../../../utils/request.js')
 
 Page({
   data:{
@@ -111,9 +110,12 @@ Page({
         orderRule: orderRule,
       }
       console.log(data)
-      requestQ.sendRequest('http://schoolbus.917tou.com/OrientBase/parentServices/orders', 'POST', data)
-        .then(function (response) {
-          console.log(response)
+      wx.request({
+        url: 'http://schoolbus.917tou.com/OrientBase/parentServices/orders',
+        data:data,
+        method:'POST',
+        success(res){
+          console.log(res)
           wx.navigateBack({
             delta: 99,
             success() {
@@ -122,10 +124,11 @@ Page({
               })
             }
           })
-        }, function (error) {
-          console.log(error);
-        })
-
+        },
+        fail(err){
+          console.log(err);
+        }
+      })
     }
   }
 })
