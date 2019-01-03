@@ -7,7 +7,7 @@
         </navigator>
       </view>
     </view>
-    <image class='banner_news' src='../images/banner_news.png'></image>
+    <image class='banner_news' src='../images/banner.png'></image>
     <view class='content_one'>
       <navigator class='xclx' url='/pages/faxian/xiaocheluxian/xiaocheluxian'>
       <image src='../images/icon_students.png'></image>

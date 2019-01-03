@@ -11,19 +11,16 @@
   },
   "pages": [
     "pages/index/delu/delu",
-    "pages/index/index",
     "pages/gongzuotai/gongzuotai",
     "pages/wode/wode",
-    "pages/shouye/shouye",
+    "pages/index/index",
     "pages/xiaoxi/xiaoxi",
     "pages/index/wjmm/wjmm",
     "pages/index/zczh/zczh",
-    "pages/aa/aa",
     "pages/wode/woyaoqingjia/woyaoqingjia",
-    "pages/wode/shangxiachejilu/shangxiachejilu",
     "pages/wode/kaoqinjilu/kaoqinjilu",
-    "pages/wode/jiesongjilu/jiesongjilu",
-    "pages/wode/yijianfankui/yijianfankui"
+    "pages/wode/yijianfankui/yijianfankui",
+    "pages/xianlu/xianlu"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -36,16 +33,16 @@
     "backgroundColor": "#fff",
     "list": [
       {
-        "pagePath": "pages/shouye/shouye",
-        "text": "首页",
-        "iconPath": "pages/images/icon_index.png",
-        "selectedIconPath": "pages/images/icon_index_sel.png"
-      },
-      {
         "pagePath": "pages/gongzuotai/gongzuotai",
         "text": "工作台",
         "iconPath": "pages/images/icon_work.png",
         "selectedIconPath": "pages/images/icon_work_sel.png"
+      },
+      {
+        "pagePath": "pages/xianlu/xianlu",
+        "text": "线路",
+        "iconPath": "pages/images/icon_mapmode.png",
+        "selectedIconPath": "pages/images/icon_mapmode_sel.png"
       },
       {
         "pagePath": "pages/xiaoxi/xiaoxi",

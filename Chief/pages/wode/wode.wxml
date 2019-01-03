@@ -1,7 +1,8 @@
 <view>
   <view>
-    <image class='icon_head' src='../images/icon_head.png'></image>
     <image class='bg_chief' src='../images/bg_chief.png'></image>
+    <image class='icon_head' src='../images/icon_head.png'></image>
+    <view class='name'>{{name}}</view>
   </view>
   <view class='content'>
     <navigator class='content_one' url='/pages/wode/woyaoqingjia/woyaoqingjia'>

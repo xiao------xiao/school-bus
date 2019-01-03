@@ -1,6 +1,5 @@
 // pages/wode/woyaoqingjia/woyaoqingjia.js
 var util = require('../../../utils/util.js');
-var requestQ = require('../../../utils/request.js')
 var app = getApp()
 
 Page({
@@ -22,7 +21,7 @@ Page({
     this.setData({
       datestart: time,
       dateend: time,
-      name: app.chiefName
+      name: app.driverName
     });
   },
   bindDateChangestart: function (e) {
@@ -54,17 +53,20 @@ Page({
       }
       console.log(e.detail.value.reason)
       var data = {
-        userId: app.chiefId,
+        userId: app.driverId,
         startTime: e.detail.value.startdate,
         endTime: e.detail.value.enddate,
         leaveType: e.detail.value.reason,
         leaveRemark: e.detail.value.leaveReason,
         leaveStatus: 0,
-        targetUserId: app.chiefId
+        targetUserId: app.driverId
       }
-      requestQ.sendRequest('http://schoolbus.917tou.com/OrientBase/parentServices/attendances', 'POST', data)
-        .then(function (response) {
-          console.log(response.data.data)
+      wx.request({
+        url: 'http://schoolbus.917tou.com/OrientBase/parentServices/attendances',
+        data:data,
+        method:'POST',
+        success(res){
+          console.log(res.data.data)
           wx.navigateBack({
             delta: 1,
             success() {
@@ -73,9 +75,11 @@ Page({
               })
             }
           })
-        }, function (error) {
-          console.log(error);
-        })
+        },
+        fail(err){
+          console.log(err)
+        }
+      })
     }
   }
 })

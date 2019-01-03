@@ -1,7 +1,8 @@
 <view>
-  <view>
-    <image class='icon_head' src='../images/icon_head.png'></image>
+  <view class='container_header'>
     <image class='bg_chief' src='../images/bg_chief.png'></image>
+    <image class='icon_head' src='../images/icon_head.png'></image>
+    <view class='name'>{{name}}</view>
   </view>
   <view class='content'>
     <navigator class='content_one' url='/pages/wode/woyaoqingjia/woyaoqingjia'>
@@ -9,19 +10,9 @@
       <view>我要请假</view>
       <image src='../images/icon_comein.png'></image>
     </navigator>
-    <navigator class='content_one' url='/pages/wode/shangxiachejilu/shangxiachejilu'>
-      <image src='../images/icon_check.png'></image>
-      <view>上下车记录</view>
-      <image src='../images/icon_comein.png'></image>
-    </navigator>
     <navigator class='content_one' url='/pages/wode/kaoqinjilu/kaoqinjilu'>
       <image src='../images/icon_attend.png'></image>
       <view>考勤记录</view>
-      <image src='../images/icon_comein.png'></image>
-    </navigator>
-    <navigator class='content_one' url='/pages/wode/jiesongjilu/jiesongjilu'>
-      <image src='../images/icon_record.png'></image>
-      <view>接送记录</view>
       <image src='../images/icon_comein.png'></image>
     </navigator>
     <navigator class='content_one' url='/pages/wode/yijianfankui/yijianfankui'>

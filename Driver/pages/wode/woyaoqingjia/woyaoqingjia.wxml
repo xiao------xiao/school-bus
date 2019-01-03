@@ -1,7 +1,7 @@
 <form bindsubmit="formSubmit">
   <view class='app'>
     <view class='xm'>
-      <image src='../../images/icon_chief.png'></image>
+      <image src='../../images/icon_driver.png'></image>
       <text>乘务长姓名</text>
       <input class='name' placeholder='{{name}}' name='name' value='{{name}}'></input>
       <!-- <input class='name' placeholder='李三' name='name' value='李三'></input> -->

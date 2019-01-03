@@ -117,7 +117,7 @@ Page({
               duration: 1500
             });
             wx.switchTab({
-              url: '/pages/shouye/shouye',
+              url: '/pages/gongzuotai/gongzuotai',
             })
           }, 2000)
         }
