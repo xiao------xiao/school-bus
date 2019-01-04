@@ -285,3 +285,7 @@
 .flex {
     flex-grow: 1;
 }
+.attendance{
+  padding: 20rpx;
+  border-bottom: 1px solid #e2e2e2;
+}

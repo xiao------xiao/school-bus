@@ -1,0 +1,12 @@
+<form bindsubmit="formSubmit" style='text-align: center;'>
+  <image style='height:400rpx;width:100%;' src='../../images/login_bg.png'></image>
+  <view style='margin-top:50rpx;color:#ed9b45'>欢迎来到智能校车</view>
+  <view style='color:#ed9b45'>请选择您想要查看的孩子校车实时情况</view>
+  <radio-group name='name'>
+    <label wx:for='{{children}}' wx:key='{{index}}'>
+      <image src='../../images/icon_girl.png'></image>
+      <radio value='{{item.name}}' color='#fbb519' checked='{{index==0?true:false}}'>{{item.name}}</radio>
+    </label>
+  </radio-group>
+  <button formType="submit">确定</button>
+</form>

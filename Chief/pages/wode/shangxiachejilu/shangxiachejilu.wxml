@@ -28,4 +28,14 @@
   </view>
   </view>
 </view>
-<view>今日记录</view>
+<view>{{cur_date}}</view>
+<view>
+  <view class='tab-wrapper'>
+      <view id='tableft' class='tab {{currentTab === 0 ? "tab-active":""}}' bindtap='switchTab'>应上车</view>
+      <view id='tabcenter' class='tab {{currentTab === 1 ? "tab-active" : ""}}' bindtap='switchTab'>未上车</view>
+      <view id='tabright' class='tab {{currentTab === 2 ? "tab-active" : ""}}' bindtap='switchTab'>请假</view>
+  </view>
+  <view class='content-wrapper' wx:if='{{currentTab === 0}}'>123</view>
+  <view class='content-wrapper' wx:if='{{currentTab === 1}}'>456</view>
+  <view class='content-wrapper' wx:if='{{currentTab === 2}}'>789</view>
+</view>

@@ -109,7 +109,7 @@ Page({
           that.setLoginData2()
         }else{
           app.chiefId = res.data.data.chiefId //获取乘务长id
-          // console.log(app.chiefId)
+          console.log(app.chiefId)
           setTimeout(function () {
             wx.showToast({
               title: '成功',

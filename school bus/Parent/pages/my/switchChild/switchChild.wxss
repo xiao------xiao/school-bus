@@ -1,0 +1,33 @@
+radio {
+  margin: 100rpx 30rpx;
+}
+
+button {
+  width: 60%;
+  background-color: #ebb842;
+  border-radius: 2em;
+  color: #fff;
+  margin: 0 auto;
+}
+radio-group{
+  padding: 50rpx;
+  display: flex;
+  
+}
+label{
+  position: relative;
+  width: 200rpx;
+  margin: 0 auto;
+}
+label image {
+  width: 150rpx;
+  height: 150rpx;
+  position: absolute;
+  left: 50%;
+  margin-left: -75rpx;
+}
+label radio{
+  margin-top: 200rpx;
+}
+
+

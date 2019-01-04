@@ -11,6 +11,7 @@
   },
   "pages": [
     "pages/index/index",
+    "pages/faxian/xiaocheluxian/xiaocheluxian",
     "pages/shouye/shouye",
     "pages/wode/wode",
     "pages/faxian/faxian",
@@ -18,7 +19,6 @@
     "pages/faxian/xiaocheluxian/zhandianmoshi/route(school)/zaixiandingpiao/zaixiandingpiao",
     "pages/wode/bangdingjiashu/jiashuxinxi/jiashuxinxi",
     "pages/faxian/zhandianzhengji/xiangxidizhi/xiangxidizhi",
-    "pages/faxian/xiaocheluxian/xiaocheluxian",
     "pages/wode/wodexiaoche/wodexiaoche",
     "pages/wode/bangdingjiashu/bangdingjiashu",
     "pages/faxian/xiaocheluxian/zhandianmoshi/zhandianmoshi",

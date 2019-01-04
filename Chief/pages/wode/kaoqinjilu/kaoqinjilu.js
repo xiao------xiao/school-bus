@@ -97,7 +97,7 @@ const conf = {
   // 500ms 动画
   createLongAnimation(height, translateY = 0) {
     var transY = translateY + 'px'
-    console.log('long animation', height, transY)
+    // console.log('long animation', height, transY)
     this.animation.height(height).translateY(transY).step()
     this.setData({
       daysAnimationData: this.animation.export()
@@ -106,7 +106,7 @@ const conf = {
   // 0.01s 快速动画
   createFastAnimation(height, translateY = 0) {
     var transY = translateY + 'px'
-    console.log('fast animation', height, transY)
+    // console.log('fast animation', height, transY)
     this.fastAnimation.height(height).translateY(transY).step()
     this.setData({
       daysAnimationData: this.fastAnimation.export()
@@ -225,7 +225,7 @@ const conf = {
   },
   // 函数说明 获取 选中日期所在周的所有装进数组里面
   computedLineDays() {
-    console.log('bar_line_offsetY', bar_line_offsetY, this.data.tranY)
+    // console.log('bar_line_offsetY', bar_line_offsetY, this.data.tranY)
     var cur_date = this.data.cur_date
     var sameWeekIndex = -1
     var days = this.data.empytGrids.concat(this.data.days)
@@ -234,7 +234,7 @@ const conf = {
       this.setData({
         totalDaysHeight: singleHeight * 6
       })
-      console.log('total 6')
+      // console.log('total 6')
       // 展开状态
       if (!this.data.showAllCalender) {
         this.createLongAnimation(singleHeight, -bar_line_offsetY)
@@ -249,7 +249,7 @@ const conf = {
       this.setData({
         totalDaysHeight: singleHeight * 5
       })
-      console.log('total 5')
+      // console.log('total 5')
       if (!this.data.showAllCalender) {
         this.createLongAnimation(singleHeight, -bar_line_offsetY)
         this.createCalenderTitleAnimation(false)
@@ -295,7 +295,7 @@ const conf = {
       }
     })
     if (!this.data.showAllCalender) {
-      console.log('line - 249')
+      // console.log('line - 249')
       this.createFastAnimation(singleHeight, -this.data.saveLine * singleHeight)
       this.createCalenderTitleAnimation(false)
       this.setData({
@@ -436,16 +436,16 @@ const conf = {
     _x_move = e.touches[0].pageX
     //根据起点和终点返回方向 1：向上，2：向下，3：向左，4：向右,0：未滑动 
     touch_angel_result = this.GetSlideDirection(_x_start, _y_start, endX, endY)
-    console.log('result', touch_angel_result)
+    // console.log('result', touch_angel_result)
     if (touch_angel_result == 1 || touch_angel_result == 2 || touch_angel_result == 0) {
       this.barTouchMove(e)
     }
   },
   touchEnd(e) {
-    console.log(e)
+    // console.log(e)
 
     if (_x_move == 0) {
-      console.log('点击')
+      // console.log('点击')
       _x_start = 0
       touch_angel_result = 0
       return
@@ -462,7 +462,7 @@ const conf = {
     // }
     _x_end = e.changedTouches[0].pageX
     var offsetX = _x_end - _x_start
-    console.log(offsetX)
+    // console.log(offsetX)
     if (Math.abs(offsetX) > 70) {
       if (offsetX > 0) {
         // 向右 月份减1
@@ -483,33 +483,33 @@ const conf = {
 
   },
   barTouchStart(e) {
-    console.log(e)
+    // console.log(e)
     // this.data.totalDaysHeight 
     bar_y_start = e.touches[0].pageY
 
   },
   barTouchMove(e) {
 
-    console.log(e)
+    // console.log(e)
     var that = this
 
     bar_y_move = e.touches[0].pageY
     var offsetY = bar_y_move - bar_y_start
     // 当前日历天数dom的高度
     var height = this.data.barHeight
-    console.log('offsetY', offsetY)
+    // console.log('offsetY', offsetY)
     // 判断往 该行收起还是展开
     var line_tranY = this.computedLineDayTranY(offsetY)
 
-    console.log('line_tranY', line_tranY)
+    // console.log('line_tranY', line_tranY)
     // 向上滑
     if (offsetY < 0) {
       // 变量说明 number   _height [日历天数dom 的高度]
       var _height = Math.abs(height + offsetY * 2)
-      console.log(_height)
+      // console.log(_height)
       // 收起状态了,再向上滑动，不触发任何动画与计算类方法
       if (height == singleHeight) {
-        console.log(33)
+        // console.log(33)
         return
       }
       if (_height <= singleHeight) {
@@ -518,11 +518,11 @@ const conf = {
         //   barHeight: 40
         // })
         // 动画 改变天数dom高度
-        console.log('line - 458')
+        // console.log('line - 458')
         that.createFastAnimation(singleHeight, line_tranY)
       } else {
         // 快速动画 改变天数dom高度
-        console.log('line - 468')
+        // console.log('line - 468')
         // 则认为是已在收起状态 , 再往上拉也不会有改变
         if (Math.abs(offsetY) > bar_line_offsetY) {
           this.createFastAnimation(singleHeight, line_tranY)
@@ -541,10 +541,10 @@ const conf = {
         //  that.setData({
         //    barHeight: this.data.totalDaysHeight 
         //  }) 
-        console.log('line - 481')
+        // console.log('line - 481')
         this.createFastAnimation(this.data.totalDaysHeight, line_tranY)
       } else {
-        console.log('line - 484')
+        // console.log('line - 484')
         this.createFastAnimation(_height, line_tranY)
       }
       setTimeout(function () {
@@ -560,7 +560,7 @@ const conf = {
     var offsetY = bar_y_end - bar_y_start
     var nowBarHeight = this.data.barHeight
 
-    console.log(offsetY)
+    // console.log(offsetY)
     if (offsetY > 0) {
       // 展开
       this.setData({
@@ -568,7 +568,7 @@ const conf = {
         barHeight: this.data.totalDaysHeight,
         tranY: 0
       })
-      console.log('line- 547')
+      // console.log('line- 547')
       this.createLongAnimation(this.data.totalDaysHeight, 0)
       this.createCalenderTitleAnimation(true)
     } else if (offsetY < 0) {
@@ -578,12 +578,12 @@ const conf = {
         tranY: -bar_line_offsetY,
         showAllCalender: false
       })
-      console.log('line- 555')
+      // console.log('line- 555')
       this.createLongAnimation(singleHeight, -bar_line_offsetY)
       this.createCalenderTitleAnimation(false)
     }
     else if (!dom && offsetY == 0) {
-      console.log(222)
+      // console.log(222)
       if (nowBarHeight == singleHeight) {
         //开启
         setTimeout(function () {
@@ -593,7 +593,7 @@ const conf = {
           })
           // 防止 变换时dom自动撑高 没有过度效果
         }, 700)
-        console.log('line- 571')
+        // console.log('line- 571')
         this.createLongAnimation(this.data.totalDaysHeight, 0)
         this.setData({
           tranY: 0,
@@ -609,7 +609,7 @@ const conf = {
             barHeight: singleHeight
           })
         }, 100)
-        console.log('line- 586')
+        // console.log('line- 586')
         this.createLongAnimation(singleHeight, -bar_line_offsetY)
         this.setData({
           tranY: -bar_line_offsetY,
@@ -624,19 +624,19 @@ const conf = {
     touch_angel_result = 0
   },
   computedLineDayTranY(offsetY) {
-    console.log('offsetY...', offsetY)
+    // console.log('offsetY...', offsetY)
     var tranY = 0
     var alreadyTranY = this.data.tranY
-    console.log('already tranY', alreadyTranY, bar_line_offsetY)
+    // console.log('already tranY', alreadyTranY, bar_line_offsetY)
     /* 
       0 < = realTranY <= bar_line_offsetY
     */
     var realTranY
     if (alreadyTranY == 0) {
-      console.log('up')
+      // console.log('up')
       // 从完全展开的状态 开始向上滑
       if (offsetY > 0) {
-        console.log('11111')
+        // console.log('11111')
         tranY = 0
       } else {
         realTranY = 0 + offsetY
@@ -655,7 +655,7 @@ const conf = {
       }
     }
     else if (Math.abs(alreadyTranY) == Math.abs(bar_line_offsetY)) {
-      console.log('down')
+      // console.log('down')
       // 从完成收起 底部开始向下拉
       if (offsetY < 0) {
         return -bar_line_offsetY
@@ -670,7 +670,7 @@ const conf = {
       }
     }
     else {
-      console.log('move when bettewn')
+      // console.log('move when bettewn')
       // 从中间开始 经历 start move 
       if (bar_line_offsetY > Math.abs(realTranY)) {
         tranY = realTranY
@@ -682,10 +682,10 @@ const conf = {
   },
   resetTranY(direction) {
     if (direction == 'up') {
-      console.log('line - 608')
+      // console.log('line - 608')
       this.createFastAnimation(this.data.totalDaysHeight, 0)
     } else {
-      console.log('line - 611')
+      // console.log('line - 611')
       this.createFastAnimation(singleHeight, -bar_line_offsetY)
     }
   },

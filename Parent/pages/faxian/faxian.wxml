@@ -1,5 +1,5 @@
 <view class="app">
-    <view class="header">
+    <view class="app_header">
       <view class="sousuo">
         <navigator class='btn' url='/pages/aa/aa'>
         <image src='../images/icon_search.png'></image>

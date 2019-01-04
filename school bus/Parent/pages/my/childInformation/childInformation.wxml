@@ -1,0 +1,30 @@
+<view>
+  <image style='width:100%;height:400rpx;' src='../../images/bg_information.png'></image>
+  <image style='width:200rpx;height:200rpx;position:absolute;top:100rpx;left:300rpx;;' src='../../images/head_default.png'></image>
+  <view class="table">
+    <view class="tr">
+      <view class="td left">姓名</view>
+      <view class="td right">{{name}}</view>
+    </view>
+    <view class="tr">
+      <view class="td left">性别</view>
+      <view class="td right">{{gender}}</view>
+    </view>
+    <view class="tr">
+      <view class="td left">所在班级</view>
+      <view class="td right">{{classname}}</view>
+    </view>
+    <view class="tr">
+      <view class="td left">手机号码</view>
+      <view class="td right">{{phone}}</view>
+    </view>
+    <view class="tr">
+      <view class="td left">家庭住址</view>
+      <view class="td right">{{homeAddress}}</view>
+    </view>
+    <view class="tr">
+      <view class="td left">所属学校</view>
+      <view class="td right">{{schoolname}}</view>
+    </view>
+  </view>
+</view>
