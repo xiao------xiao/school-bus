@@ -1,7 +1,0 @@
-{
-  "usingComponents": {
-    "zhandianmoshi": "./zhandianmoshi/zhandianmoshi",
-    "ditumoshi": "./ditumoshi/ditumoshi"
-  },
-  "navigationBarTitleText": "校车路线"
-}

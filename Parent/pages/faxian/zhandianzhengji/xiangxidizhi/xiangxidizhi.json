@@ -1,6 +1,0 @@
-{
-  "usingComponents": {
-    "map-route": "plugin://mapRoute/mapRoute"
-  },
-  "navigationBarTitleText": ""
-}

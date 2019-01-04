@@ -1,6 +1,0 @@
-{
-  "component": true,
-  "usingComponents": {
-    "map-route": "plugin://mapRoute/mapRoute"
-  }
-}

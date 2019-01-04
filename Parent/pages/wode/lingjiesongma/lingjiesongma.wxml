@@ -1,8 +1,0 @@
-<view class='container'>
-  <image class='one' src='./images/pic_code.png'></image>
-  <view class='two'>
-    <image src='./images/ewm-black.png'></image>
-    <view>接送二维码会实时更新请及时领取</view>
-  </view>
-  <button bindtap='bc'>保存为图片</button>
-</view>

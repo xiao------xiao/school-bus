@@ -1,7 +1,0 @@
-<view>
-  <view class='bus-route'>
-    <image src='../images/circle02.png'></image>
-    <view class='bus-number'>您的校车：bus01</view>
-    <image src='../images/map.png'></image>
-  </view>
-</view>

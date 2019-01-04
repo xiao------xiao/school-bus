@@ -1,7 +1,0 @@
-{
-  "usingComponents": {
-    "wodeyuding": "./wodeyuding/wodeyuding",
-    "wodeshoucang": "./wodeshoucang/wodeshoucang"
-  },
-  "navigationBarTitleText": "校车路线"
-}
