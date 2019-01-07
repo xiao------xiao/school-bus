@@ -1,0 +1,54 @@
+{
+  "pages": [
+    "pages/index/login/login",
+    "pages/index/register/register",
+    "pages/index/resetPassword/resetPassword",
+    "pages/home/home",
+    "pages/workbench/workbench",
+    "pages/message/message",
+    "pages/my/my",
+    "pages/my/ask-for-leave/ask-for-leave",
+    "pages/my/on-off/on-off",
+    "pages/my/attendance/attendance",
+    "pages/my/pickup-record/pickup-record",
+    "pages/my/feedback/feedback",
+    "pages/home/student-list/student-list",
+    "pages/home/my-daily/my-daily"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "selectedColor": "#000",
+    "backgroundColor": "#fff",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "首页",
+        "iconPath": "pages/images/icon_index.png",
+        "selectedIconPath": "pages/images/icon_index_sel.png"
+      },
+      {
+        "pagePath": "pages/workbench/workbench",
+        "text": "工作台",
+        "iconPath": "pages/images/icon_work.png",
+        "selectedIconPath": "pages/images/icon_work_sel.png"
+      },
+      {
+        "pagePath": "pages/message/message",
+        "text": "消息",
+        "iconPath": "pages/images/icon_message.png",
+        "selectedIconPath": "pages/images/icon_message_sel.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "pages/images/icon_my.png",
+        "selectedIconPath": "pages/images/icon_my_sel.png"
+      }
+    ]
+  }
+}

@@ -1,0 +1,6 @@
+<view>
+  <view class='sous'>
+    <image src='../../images/icon_search.png'></image>
+    <input placeholder='搜索站点'></input>
+  </view>
+</view>

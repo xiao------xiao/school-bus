@@ -1,2 +1,61 @@
-<!--pages/found/found.wxml-->
-<text>pages/found/found.wxml</text>
+<view class="app">
+    <view class="app_header">
+      <view class="sousuo">
+        <navigator class='btn' url='/pages/aa/aa'>
+        <image src='../images/icon_search.png'></image>
+        <text>智慧校车</text>
+        </navigator>
+      </view>
+    </view>
+    <image class='banner_news' src='../images/banner_news.png'></image>
+    <view class='content_one'>
+      <navigator class='xclx' url='/pages/found/school-bus-route/school-bus-route'>
+      <image src='../images/icon_route.png'></image>
+      <view>校车路线</view>
+      </navigator>
+      <navigator class='zdzj' url='/pages/found/site-collection/site-collection'>
+      <image src='../images/icon_collect.png'></image>
+      <view>站点征集</view>
+      </navigator>
+      <navigator class='swzl' url='/pages/aa/aa'>
+      <image src='../images/icon_lost.png'></image>
+      <view>失物招领</view>
+      </navigator>
+      <navigator class='hysq' url='/pages/aa/aa'>
+      <image src='../images/icon_community.png'></image>
+      <view>会员社区</view>
+      </navigator>
+    </view>
+    <view style='display: flex;'>
+      <navigator url='/pages/aa/aa'  class='content_two' style='border-top:1px solid #e2e2e2;border-right:1px solid #e2e2e2;'>
+        <image src='../images/icon_appointment.png'></image>
+        <text class='one'>专车预定</text>
+        <text class='two'>随时随地签到</text>
+      </navigator>
+      <navigator url='/pages/found/my-calendar/my-calendar' class='content_two' style='border-top:1px solid #e2e2e2;'>
+        <image src='../images/icon_calendar.png'></image>
+        <text class='one'>我的日历</text>
+        <text class='two'>记录生活点滴</text>
+      </navigator>
+    </view>
+    <view class='content_third'>
+      <image src='../images/pic_activity01.png'></image>
+      <image src='../images/pic_activity02.png'></image>
+    </view>
+    <view class='content_four'>
+      <image class='icon_news' src='../images/icon_news.png'></image>
+      <text class='text_news'>校车最新资讯</text>
+      <navigator class='more' url='/pages/aa/aa'>
+        <text class='text_more'>查看更多</text>
+        <image class='icon_more' src='../images/icon_more.png'></image>
+      </navigator>
+    </view>
+    <navigator url='{{item.url}}' class='content_five' wx:for='{{routers}}' wx:key='name'>
+      <view class='text'>{{item.name}}</view>
+      <view class='icon_browse'>
+        <image src='{{item.icon}}' mode='scaleToFill'></image>
+        <text>{{item.num}}浏览数</text>
+      </view>
+      <image class='login_bg' src='{{item.pic}}'></image>
+    </navigator>
+  </view>

@@ -1,0 +1,6 @@
+<view class='xiaoxi' wx:for="{{routers}}" wx:key="name">
+  <image src='../images/icon_other.png'></image>
+  <view class='djtz'>{{item.name}}</view>
+  <view class='xhjz'>您的小孩已被{{item.parent}}接走</view>
+  <view class='sj'>{{item.time}}</view>
+</view>

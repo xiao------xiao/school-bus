@@ -43,13 +43,13 @@ Page({
       },
       {
         name: '意见反馈',
-        url: '/pages/wode/yijianfankui/yijianfankui',
+        url: '/pages/my/feedback/feedback',
         icon: '../images/icon_feedback.png',
         code: '10'
       },
       {
         name: '接送记录',
-        url: '/pages/wode/jiesongjilu/jiesongjilu',
+        url: '/pages/my/pickup-record/pickup-record',
         icon: '../images/icon_send.png',
         code: '11'
       },

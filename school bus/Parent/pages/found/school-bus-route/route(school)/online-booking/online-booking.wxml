@@ -1,0 +1,37 @@
+<form bindsubmit="formSubmit">
+<view class='app'>
+  <view class='header'>
+    <image class='img_zxdp' src='../../../../images/Book-tickets-online.png'></image>
+    <navigator class='site' url='/pages/found/school-bus-route/route(school)/online-booking/select-site/select-site'>
+      <image src='../../../../images/point.png'></image>
+      <input name='site' value='{{site}}'></input>
+    </navigator>
+  </view>
+  <view class='container'>
+    <view class='ydxh'>
+      <view>预定小孩</view>
+      <input name='name' value='{{name}}'></input>
+      <!-- <input name='name' value='张三'></input> -->
+    </view>
+    <view class='ydsj'>
+      <view>预定时间</view>
+      <picker name='startdate' mode="date" value="{{datestart}}" bindchange="bindDateChangestart">
+        <view style='font-size: 24rpx;color: #909090;' class="picker">{{datestart}}</view>
+      </picker>
+      <view style='margin-left: 50rpx;'>-</view>
+      <picker name='enddate' mode="date" value="{{dateend}}" bindchange="bindDateChangeend">
+        <view style='font-size: 24rpx;color: #909090;' class="picker">{{dateend}}</view>
+      </picker>
+    </view>
+    <view class='zcpl'>
+      <view>坐车频率</view>
+      <checkbox-group name='date'>
+        <label wx:for="{{week}}" wx:key='{{index}}' value='item.time'>
+        <checkbox class="checkbox" color='#ebb842' value="{{item.time}}" checked="{{item.checked}}">{{item.time}}</checkbox>
+        </label>
+      </checkbox-group>
+    </view>
+  </view>
+  <button formType="submit">提交</button>
+  </view>
+</form>

@@ -1,0 +1,17 @@
+.sous{
+  display: flex;
+  background-color: #f7f7f7;
+  width: 85%;
+  margin: 20rpx auto;
+  padding: 10rpx;
+  border-radius: 1em;
+}
+.sous image{
+  width:30rpx;
+  height: 30rpx;
+  padding: 12rpx;
+}
+.sous input{
+  font-size: 30rpx;
+  width: 100%;
+}

@@ -1,0 +1,5 @@
+<view class='app'>
+  <view class='site' wx:for='{{site}}' wx:key='{{index}}'>
+    <navigator url='/pages/found/school-bus-route/route(school)/online-booking/online-booking?site={{item.name}}&&siteid={{item.id}}'>{{item.name}}</navigator>
+  </view>
+</view>

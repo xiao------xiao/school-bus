@@ -1,11 +1,11 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/found/found",
     "pages/index/login/login",
     "pages/index/resetPassword/resetPassword",
     "pages/index/register/register",
     "pages/home/home",
-    "pages/found/found",
     "pages/message/message",
     "pages/my/my",
     "pages/my/pick-up/pick-up",
@@ -15,7 +15,17 @@
     "pages/my/askForLeave/askForLeave",
     "pages/my/childInformation/childInformation",
     "pages/my/familyMembers/familyMembers",
-    "pages/my/familyMembers/addFamilyMembers/addFamilyMembers"
+    "pages/my/familyMembers/addFamilyMembers/addFamilyMembers",
+    "pages/my/feedback/feedback",
+    "pages/aa/aa",
+    "pages/my/pickup-record/pickup-record",
+    "pages/found/my-calendar/my-calendar",
+    "pages/found/site-collection/site-collection",
+    "pages/found/site-collection/detailed-address/detailed-address",
+    "pages/found/school-bus-route/school-bus-route",
+    "pages/found/school-bus-route/route(school)/route(school)",
+    "pages/found/school-bus-route/route(school)/online-booking/online-booking",
+    "pages/found/school-bus-route/route(school)/online-booking/select-site/select-site"
   ],
   "window": {
     "backgroundTextStyle": "light",

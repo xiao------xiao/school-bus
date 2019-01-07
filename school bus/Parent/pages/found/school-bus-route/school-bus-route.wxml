@@ -1,0 +1,34 @@
+<view class='sous'>
+  <image src='../../images/icon_search.png'></image>
+  <input placeholder='搜索站点'></input>
+</view>
+<view>
+  <view class='tab-wrapper'>
+    <view class='ms left'>
+      <image class='{{currentTab === 0 ? "img-active":""}}' src='../../images/icon_sitemode.png'></image>
+      <image class='{{currentTab === 1 ? "img-active":""}}' src='../../images/icon_sitemode_sel.png'></image>
+      <text id='tableft' class='tab-left {{currentTab === 0 ? "tab-active":""}}' bindtap='switchTab'>站点模式</text>
+    </view>
+    <view class='ms'>
+      <image class='{{currentTab === 1 ? "img-active":""}}' src='../../images/icon_mapmode.png'></image>
+      <image class='{{currentTab === 0 ? "img-active":""}}' src='../../images/icon_mapmode_sel.png'></image>
+      <text id='tabright' class='tab-right {{currentTab === 1 ? "tab-active" : ""}}' bindtap='switchTab'>地图模式</text>
+    </view>
+  </view>
+
+  <!-- 站点模式 -->
+  <view class='content-wrapper' wx:if='{{currentTab === 0}}'>
+    <view>
+      <image class='image' src='../../images/banner_route.png'></image>
+      <navigator url='/pages/found/school-bus-route/route(school)/route(school)?id={{index}}' class='route' wx:for='{{route}}' wx:key='index'>
+        <image class='icon1' src='../../images/icon_collection.png'></image>
+        <image class='icon2' src='../../images/icon_bus.png'></image>
+        <view class='route_route'>{{item.name}}</view>
+        <view class='site'>{{item.remark}}</view>
+        <image class='icon_comein' src='../../images/icon_comein.png'></image>
+      </navigator>
+    </view>
+  </view>
+  <!-- 地图模式 -->
+  <view class='content-wrapper' wx:if='{{currentTab === 1}}'>789</view>
+</view>

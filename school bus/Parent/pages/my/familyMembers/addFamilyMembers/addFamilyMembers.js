@@ -2,13 +2,21 @@ var util = require("../../../../utils/util.js");
 var app = getApp()
 
 Page({
-  data: {},
+  data: {
+    index: 0,
+    parent: ['请选择身份','爸爸', '妈妈', '爷爷','奶奶','叔叔','阿姨','其他']
+  },
+  bindPickerChange: function (e) {
+    this.setData({
+      index: e.detail.value
+    })
+  },
   formSubmit: function (e) {
     console.log(e.detail.value);
 
-    if (e.detail.value.parent.length == 0) {
+    if (e.detail.value.parent == '请选择身份') {
       wx.showToast({
-        title: '请输入身份!'
+        title: '请选择身份!'
       })
       setTimeout(function () {
         wx.hideToast()
