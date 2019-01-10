@@ -109,7 +109,7 @@ Page({
           that.setLoginData2()
         } else {
           app.parentId = res.data.data.parentId //获取家长id
-          // console.log(app.parentId)
+          console.log(app.parentId)
           setTimeout(function () {
             wx.showToast({
               title: '成功',

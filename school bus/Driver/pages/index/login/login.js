@@ -109,7 +109,7 @@ Page({
           that.setLoginData2()
         } else {
           app.driverId = res.data.data.driverId //获取司机id
-          // console.log(app.driverId)
+          console.log(app.driverId)
           setTimeout(function () {
             wx.showToast({
               title: '成功',
