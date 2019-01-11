@@ -65,7 +65,7 @@ Page({
   },
   onShow: function () {
     this.setData({
-      name: app.chooseChildName ? app.chooseChildName : app.children[this.data.index].name
+      name: app.chooseChildName ? app.chooseChildName : app.defaultchildName
     })
   }
 })  

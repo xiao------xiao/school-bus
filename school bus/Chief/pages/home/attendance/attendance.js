@@ -3,7 +3,8 @@ var date = require('../../../utils/util.js')
 Page({
   data:{
     date:'',
-    week:''
+    week:'',
+    currentTab:0
 
   },
   onLoad: function() {

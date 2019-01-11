@@ -1,7 +1,7 @@
 {
   "pages": [
-    "pages/home/attendance/attendance",
     "pages/index/login/login",
+    "pages/home/attendance/attendance",
     "pages/home/my-daily/my-daily",
     "pages/index/register/register",
     "pages/index/resetPassword/resetPassword",

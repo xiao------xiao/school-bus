@@ -6,10 +6,12 @@
 <view class='go'>
   <image src='../../images/icon_morning.png'></image>
   <view style='width:70%;'>上班</view>
-  <view style='padding:0 20rpx;background-color:#fbb41a'>未签到</view>
+  <!-- <view style='padding:0 20rpx;background-color:#fbb41a'>未签到</view> -->
+  <view style='padding:0 20rpx;background-color:#e2e2e2'>已签到</view>
 </view>
 <view class='up'>
   <image src='../../images/icon_morning.png'></image>
   <view style='width:70%;'>上班</view>
-  <view style='padding:0 20rpx;background-color:#fbb41a'>未签到</view>
+  <!-- <view style='padding:0 20rpx;background-color:#fbb41a'>未签到</view> -->
+  <view style='padding:0 20rpx;background-color:#e2e2e2' class='{{currentTab==1?active:""}}'>已签到</view>
 </view>

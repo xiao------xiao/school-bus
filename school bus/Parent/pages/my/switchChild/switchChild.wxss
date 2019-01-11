@@ -29,5 +29,7 @@ label image {
 label radio{
   margin-top: 200rpx;
 }
-
+.gender{
+  display: none;
+}
 

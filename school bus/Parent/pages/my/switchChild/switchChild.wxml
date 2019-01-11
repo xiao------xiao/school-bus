@@ -4,7 +4,7 @@
   <view style='color:#ed9b45'>请选择您想要查看的孩子校车实时情况</view>
   <radio-group name='name'>
     <label wx:for='{{children}}' wx:key='{{index}}'>
-      <image src='../../images/icon_girl.png'></image>
+      <image src='{{item.gender==0?icon.girl:icon.boy}}'></image>
       <radio value='{{item.name}}' color='#fbb519' checked='{{index==0?true:false}}'>{{item.name}}</radio>
     </label>
   </radio-group>
