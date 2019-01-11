@@ -24,7 +24,7 @@ let choose_year = null,
   currentDay = 'current',
   hasTaskClassName = 'has-task'
 
-const conf = {
+Page({
   data: {
     // 是否有 天数 空格
     hasEmptyGrid: false,
@@ -53,7 +53,8 @@ const conf = {
     daysAnimationData: {},
     // 年月 标题
     yearMonthTitleAnimationData: {},
-    currentTab: 0
+    currentTab: 0,
+    week:''
   },
   onLoad() {
     // 设置单行高度
@@ -73,6 +74,7 @@ const conf = {
     });
     this.calculateEmptyGrids(cur_year, cur_month);
     this.calculateDays(cur_year, cur_month);
+    this.switchday(this.data.cur_date)
     // 创建动画实例
     this.initAnimation()
   },
@@ -169,6 +171,7 @@ const conf = {
     });
     this.calculateEmptyGrids(cur_year, cur_month)
     this.calculateDays(cur_year, cur_month)
+    this.switchday(cur_date)
   },
   // 计算年月对应的天数
   calculateDays(year, month) {
@@ -410,9 +413,11 @@ const conf = {
     //days[idx].choosed = !days[idx].choosed;
     this.setData({
       // days,
-      cur_date: days[idx].dateStr
+      cur_date: days[idx].dateStr,
+      cur_day: days[idx].day
     });
     this.computedLineDays()
+    this.switchday(this.data.cur_date)
   },
   // 收起时选日期
   tapDayItemWhenCloseCalendar(e) {
@@ -727,7 +732,23 @@ const conf = {
     } else {
       this.setData({ currentTab: 2 })
     }
+  },
+  switchday: function (date){
+    function getWeek(date) {
+      var week;
+      if (date.getDay() == 0) week = "星期日"
+      if (date.getDay() == 1) week = "星期一"
+      if (date.getDay() == 2) week = "星期二"
+      if (date.getDay() == 3) week = "星期三"
+      if (date.getDay() == 4) week = "星期四"
+      if (date.getDay() == 5) week = "星期五"
+      if (date.getDay() == 6) week = "星期六"
+      return week;
+    }
+    var week = getWeek(new Date(date))
+    // console.log(week)
+    this.setData({
+      week: week
+    })
   }
-};
-
-Page(conf);
+});

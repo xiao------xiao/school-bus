@@ -109,13 +109,13 @@ Page({
         stationId: that.data.siteid,
         orderRule: orderRule,
       }
-      // console.log(data)
+      console.log('提交的内容',data)
       wx.request({
         url: 'http://schoolbus.917tou.com/OrientBase/parentServices/orders',
         data: data,
         method: 'POST',
         success(res) {
-          // console.log(res)
+          console.log('提交成功',res)
           wx.navigateBack({
             delta: 99,
             success() {

@@ -28,4 +28,26 @@
   </view>
   </view>
 </view>
-<view>{{cur_date}}</view>
+
+<view class='today_record'>今日记录</view>
+<view class='record'>
+  <view class='record_month'>{{cur_month}}月</view>
+  <view class='record_day'>{{cur_day}}</view>
+  <view class='record_week'>{{week}}</view>
+  <view class='record_mood'>今天又是忙碌的一天</view>
+  <image class='record_img' src='../../images/pic01.png'></image>
+</view>
+<view class='record'>
+  <view class='record_month'>{{cur_month}}月</view>
+  <view class='record_day'>{{cur_day}}</view>
+  <view class='record_week'>{{week}}</view>
+  <view class='record_mood'>今天又是忙碌的一天</view>
+  <image class='record_img' src='../../images/pic01.png'></image>
+</view>
+<view class='record'>
+  <view class='record_month'>{{cur_month}}月</view>
+  <view class='record_day'>{{cur_day}}</view>
+  <view class='record_week'>{{week}}</view>
+  <view class='record_mood'>今天又是忙碌的一天</view>
+  <image class='record_img' src='../../images/pic01.png'></image>
+</view>

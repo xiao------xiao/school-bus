@@ -17,7 +17,7 @@ Page({
       startEnd: app.remarks
     })
     app.sites = this.data.startEnd[this.data.id].stations //选择的路线上的所有站点
-    // console.log(app.sites)
+    console.log('选择路线上的所有站点',app.sites)
 
   }
 })

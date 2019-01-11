@@ -1,0 +1,15 @@
+<view class='content_top'>
+  <image class='img' src='../../images/bg_attend.png'></image>
+  <view class='week'>{{week}}</view>
+  <view class='date'>{{date}}</view>
+</view>
+<view class='go'>
+  <image src='../../images/icon_morning.png'></image>
+  <view style='width:70%;'>上班</view>
+  <view style='padding:0 20rpx;background-color:#fbb41a'>未签到</view>
+</view>
+<view class='up'>
+  <image src='../../images/icon_morning.png'></image>
+  <view style='width:70%;'>上班</view>
+  <view style='padding:0 20rpx;background-color:#fbb41a'>未签到</view>
+</view>

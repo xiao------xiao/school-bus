@@ -27,7 +27,7 @@
       </navigator>
     </view>
     <view style='display: flex;'>
-      <navigator url='/pages/aa/aa'  class='content_two' style='border-top:1px solid #e2e2e2;border-right:1px solid #e2e2e2;'>
+      <navigator url='/pages/home/attendance/attendance'  class='content_two' style='border-top:1px solid #e2e2e2;border-right:1px solid #e2e2e2;'>
         <image src='../images/btn_check.png'></image>
         <text class='one'>我要考勤</text>
         <text class='two'>随时随地签到</text>

@@ -28,7 +28,7 @@ Page({
       method: 'GET',
       success(res) {
         app.remarks = res.data.data.list //所有线路的信息
-        // console.log(app.remarks)
+        console.log('所有线路的信息',app.remarks)
         that.setData({
           route: app.remarks
         })

@@ -26,7 +26,7 @@ Page({
         app.chooseChildhomeAddress = app.children[i].homeAddress //选中小孩的家庭地址
         app.chooseChildphone = app.children[i].phone //选中小孩的手机号码
         app.chooseChildschoolId = app.children[i].schoolId //选中小孩的学校id
-        // console.log("选中小孩的信息",app.chooseChildName, app.chooseChildId, app.chooseChildgender, app.chooseChildclassname, app.chooseChildhomeAddress, app.chooseChildphone)
+        console.log("选中小孩的信息", app.chooseChild)
       }
     }
   }

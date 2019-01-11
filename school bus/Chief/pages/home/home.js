@@ -82,7 +82,7 @@ Page({
       method: 'GET',
       success(res) {
         app.chiefName = res.data.data.name //获取乘务长姓名
-        // console.log(app.chiefName)
+        console.log('乘务长姓名',app.chiefName)
       },
       fail(err) {
         console.log(err)
