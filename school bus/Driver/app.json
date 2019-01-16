@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/index/login/login",
+    "pages/workbench/my-daily/my-daily",
     "pages/index/register/register",
     "pages/index/resetPassword/resetPassword",
     "pages/workbench/workbench",
@@ -10,7 +11,8 @@
     "pages/my/ask-for-leave/ask-for-leave",
     "pages/my/attendance/attendance",
     "pages/my/feedback/feedback",
-    "pages/route/route(school)/route(school)"
+    "pages/route/route(school)/route(school)",
+    "pages/workbench/attendance/attendance"
   ],
   "window": {
     "backgroundTextStyle": "light",

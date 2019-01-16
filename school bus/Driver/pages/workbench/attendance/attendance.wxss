@@ -1,0 +1,42 @@
+.content_top{
+  position: relative;
+  color: #fff;
+}
+.content_top .img{
+  width: 100%;
+  height: 300rpx;
+}
+.content_top .week{
+  position: absolute;
+  top: 30%;
+  left: 10%;
+  font-size: 40rpx;
+}
+.content_top .date{
+  position: absolute;
+  top: 60%;
+  left: 10%;
+}
+.go{
+  display: flex;
+  height: 50rpx;
+  line-height: 50rpx;
+  padding: 30rpx;
+  border-bottom: 1px solid #e2e2e2;
+}
+.go image{
+  width: 50rpx;
+  height: 50rpx;
+  margin-right: 30rpx;
+}
+.up{
+  display: flex;
+  height: 50rpx;
+  line-height: 50rpx;
+  padding: 30rpx;
+}
+.up image{
+  width: 50rpx;
+  height: 50rpx;
+  margin-right: 30rpx;
+}

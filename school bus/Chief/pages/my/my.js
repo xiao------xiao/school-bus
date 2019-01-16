@@ -7,7 +7,7 @@ Page({
   },
   onLoad: function () {
     this.setData({
-      name: app.chiefName ? app.chiefName : '读取错误'
+      name: app.chiefName ? app.chiefName : ''
     })
   }
 })

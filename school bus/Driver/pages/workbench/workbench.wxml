@@ -3,20 +3,20 @@
     <image src='../images/banner.png'></image>
   </view>
   <view class='main'>
-    <view class='content_job'>
+    <navigator class='content_job' url='/pages/workbench/attendance/attendance'>
       <image src='../images/btn_check.png'></image>
       <view class='content_record'>
         <view>我要考勤</view>
         <view style='color:#9c9c9c;font-size:20rpx;'>随时随地签到</view>
       </view>
-    </view>
-    <view class='content_job'>
+    </navigator>
+    <navigator class='content_job' url='/pages/workbench/my-daily/my-daily'>
       <image src='../images/btn_daily.png'></image>
       <view class='content_record'>
         <view>我的日报</view>
         <view style='color:#9c9c9c;font-size:20rpx;'>记录工作概况</view>
       </view>
-    </view>
+    </navigator>
   </view>
   <view style='margin:20rpx;'>今日工作</view>
   <view class='today_job'>

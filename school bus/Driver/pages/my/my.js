@@ -7,7 +7,7 @@ Page({
   },
   onLoad: function () {
     this.setData({
-      name: app.driverName ? app.driverName : '读取错误'
+      name: app.driverName ? app.driverName : ''
     })
   }
 })
