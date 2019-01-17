@@ -1,6 +1,11 @@
 var util = require("../../../utils/util.js");
 const app = getApp()
 
+var rck = 'rememberCheck';
+var rui = 'rememberUserInfo';
+var loginList = 'loginList';
+var rbFlag = false;
+
 Page({
   data: {
     loginBtnTxt: "登录",
@@ -9,40 +14,82 @@ Page({
     disabled: false,
     inputUserName: '',
     inputPassword: '',
+    image: ''
   },
-  onLoad: function (options) {
+  onLoad: function(options) {
+    // 判断是否记住密码
+    try {
+      rbFlag = wx.getStorageSync(rck)
+      if (rbFlag) {
+        this.setData({
+          image: '../../images/ok.png'
+        })
+        var rif = wx.getStorageSync(rui);
+        if (rui != null && rui != '') {
+          var name = rif.name;
+          var pswd = rif.pswd;
+          console.log('记住账号和密码', name, pswd);
+          this.setData({
+            inputUserName: name,
+            inputPassword: pswd,
+          })
+        }
+      } else {
+        this.setData({
+          image: '../../images/no.png'
+        })
+      }
+
+    } catch (e) {
+      console.log(e)
+    }
   },
-  onReady: function () {
+  // 记住密码
+  rembUser: function(e) {
+    if (rbFlag) {
+      this.setData({
+        image: '../../images/no.png'
+      })
+      rbFlag = false;
+      console.log('rbFlag', rbFlag);
+      wx.setStorageSync(rck, rbFlag);
+    } else {
+      this.setData({
+        image: '../../images/ok.png'
+      })
+      rbFlag = true;
+      console.log('rbFlag', rbFlag);
+      wx.setStorageSync(rck, rbFlag);
+    }
+  },
+  onReady: function() {
     // 页面渲染完成
 
   },
-  onShow: function () {
+  onShow: function() {
     // 页面显示
 
   },
-  onHide: function () {
+  onHide: function() {
     // 页面隐藏
 
   },
-  onUnload: function () {
+  onUnload: function() {
     // 页面关闭
 
   },
-  formSubmit: function (e) {
+  formSubmit: function(e) {
     var param = e.detail.value;
-    // app.userphone = e.detail.value.username; // 用户手机号码
-    // app.userpassword = e.detail.value.password;// 用户密码
-    // console.log(app.userphone, app.userpassword)
     this.mysubmit(param);
   },
-  mysubmit: function (param) {
+  mysubmit: function(param) {
     var flag = this.checkUserName(param) && this.checkPassword(param)
     if (flag) {
       this.setLoginData1();
       this.checkUserInfo(param);
     }
   },
-  setLoginData1: function () {
+  setLoginData1: function() {
     this.setData({
       loginBtnTxt: "登录中",
       disabled: !this.data.disabled,
@@ -50,7 +97,7 @@ Page({
       btnLoading: !this.data.btnLoading
     });
   },
-  setLoginData2: function () {
+  setLoginData2: function() {
     this.setData({
       loginBtnTxt: "登录",
       disabled: !this.data.disabled,
@@ -58,7 +105,7 @@ Page({
       btnLoading: !this.data.btnLoading
     });
   },
-  checkUserName: function (param) {
+  checkUserName: function(param) {
     var email = util.regexConfig().email;
     var phone = util.regexConfig().phone;
     var inputUserName = param.username.trim();
@@ -73,7 +120,7 @@ Page({
       return false;
     }
   },
-  checkPassword: function (param) {
+  checkPassword: function(param) {
     var userName = param.username.trim();
     var password = param.password.trim();
     if (password.length <= 0) {
@@ -94,7 +141,7 @@ Page({
       return true;
     }
   },
-  checkUserInfo: function (param) {
+  checkUserInfo: function(param) {
     var that = this;
     wx.request({
       url: 'http://schoolbus.917tou.com/OrientBase/login?username=' + param.username + '&password=' + param.password,
@@ -108,9 +155,16 @@ Page({
           });
           that.setLoginData2()
         } else {
+          // 记住密码,你也可以放到请求数据成功的里面，这样用户输错信息，就不会记住错误的密码
+          // 跳转带有tab的界面使用：wx.switchTab({ url: "../home/home" });
+          var obj = new Object();
+          obj.name = param.username;
+          obj.pswd = param.password;
+          console.log('obj', obj);
+          wx.setStorageSync(rui, obj);
           app.parentId = res.data.data.parentId //获取家长id
-          console.log('家长id',app.parentId)
-          setTimeout(function () {
+          console.log('家长id', app.parentId)
+          setTimeout(function() {
             wx.showToast({
               title: '成功',
               icon: 'success',

@@ -1,8 +1,8 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/found/found",
     "pages/index/login/login",
+    "pages/found/found",
     "pages/index/resetPassword/resetPassword",
     "pages/index/register/register",
     "pages/home/home",

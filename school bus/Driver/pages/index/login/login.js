@@ -1,6 +1,11 @@
 var util = require("../../../utils/util.js");
 const app = getApp()
 
+var rck = 'rememberCheck';
+var rui = 'rememberUserInfo';
+var loginList = 'loginList';
+var rbFlag = false;
+
 Page({
   data: {
     loginBtnTxt: "登录",
@@ -9,8 +14,53 @@ Page({
     disabled: false,
     inputUserName: '',
     inputPassword: '',
+    image:''
   },
   onLoad: function (options) {
+    // 判断是否记住密码
+    try {
+      rbFlag = wx.getStorageSync(rck)
+      if (rbFlag) {
+        this.setData({
+          image: '../../images/ok.png'
+        })
+        var rif = wx.getStorageSync(rui);
+        if (rui != null && rui != '') {
+          var name = rif.name;
+          var pswd = rif.pswd;
+          console.log('记住账号和密码', name, pswd);
+          this.setData({
+            inputUserName: name,
+            inputPassword: pswd,
+          })
+        }
+      } else {
+        this.setData({
+          image: '../../images/no.png'
+        })
+      }
+
+    } catch (e) {
+      console.log(e)
+    }
+  },
+  // 记住密码
+  rembUser: function (e) {
+    if (rbFlag) {
+      this.setData({
+        image: '../../images/no.png'
+      })
+      rbFlag = false;
+      console.log('rbFlag', rbFlag);
+      wx.setStorageSync(rck, rbFlag);
+    } else {
+      this.setData({
+        image: '../../images/ok.png'
+      })
+      rbFlag = true;
+      console.log('rbFlag', rbFlag);
+      wx.setStorageSync(rck, rbFlag);
+    }
   },
   onReady: function () {
     // 页面渲染完成
@@ -108,6 +158,13 @@ Page({
           });
           that.setLoginData2()
         } else {
+          // 记住密码,你也可以放到请求数据成功的里面，这样用户输错信息，就不会记住错误的密码
+          // 跳转带有tab的界面使用：wx.switchTab({ url: "../home/home" });
+          var obj = new Object();
+          obj.name = param.username;
+          obj.pswd = param.password;
+          console.log('obj', obj);
+          wx.setStorageSync(rui, obj);
           app.driverId = res.data.data.driverId //获取司机id
           console.log('司机id',app.driverId)
           setTimeout(function () {
