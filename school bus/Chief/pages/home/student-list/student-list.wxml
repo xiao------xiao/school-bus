@@ -3,5 +3,16 @@
     <image src='../../images/icon_search.png'></image>
     <input placeholder='搜索'></input>
   </view>
-  <view>123456</view>
+  <view class='studentlist' bindtap='switchTab'>
+    <view class='studentname'>小明</view>
+    <image src='{{img}}'></image>
+  </view>
+  <view class='{{currentTab==1?"active":"none"}}'>
+    <view>爸爸</view>
+    <view>18861856189</view>
+  </view>
+  <view class='{{currentTab==1?"active":"none"}}'>
+    <view>妈妈</view>
+    <view>18861856189</view>
+  </view>
 </view>

@@ -4,4 +4,30 @@
     <view class='bus-number'>您的校车：bus01</view>
     <image src='../images/map.png'></image>
   </view>
+  <view class='record'>
+    <view class='tab-wrapper'>
+        <view id='tableft' class='tab {{currentTab === 0 ? "tab-active":""}}' bindtap='switchTab'>应上车</view>
+        <view id='tabcenter' class='tab {{currentTab === 1 ? "tab-active" : ""}}' bindtap='switchTab'>未上车</view>
+        <view id='tabright' class='tab {{currentTab === 2 ? "tab-active" : ""}}' bindtap='switchTab'>请假</view>
+    </view>
+    <view class='content-wrapper' wx:if='{{currentTab === 0}}'>
+    <view>
+      <view>123</view>
+      <view>123</view>
+      <view>123</view>
+      <view>123</view>
+      <view>123</view>
+      <view>123</view>
+      <view>123</view>
+      <view>123</view>
+      <view>123</view>
+    </view>
+    <view class='smsc' bindtap='sweep'>
+    <image src='../images/sweep.png'></image>
+    <view>扫码上车</view>
+    </view>
+    </view>
+    <view class='content-wrapper' wx:if='{{currentTab === 1}}'>456</view>
+    <view class='content-wrapper' wx:if='{{currentTab === 2}}'>789</view>
+  </view>
 </view>

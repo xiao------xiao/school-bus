@@ -1,12 +1,13 @@
 {
   "pages": [
     "pages/index/login/login",
+    "pages/workbench/workbench",
+    "pages/home/student-list/student-list",
     "pages/home/attendance/attendance",
     "pages/home/my-daily/my-daily",
     "pages/index/register/register",
     "pages/index/resetPassword/resetPassword",
     "pages/home/home",
-    "pages/workbench/workbench",
     "pages/message/message",
     "pages/my/my",
     "pages/my/ask-for-leave/ask-for-leave",
@@ -14,7 +15,6 @@
     "pages/my/attendance/attendance",
     "pages/my/pickup-record/pickup-record",
     "pages/my/feedback/feedback",
-    "pages/home/student-list/student-list",
     "pages/aa/aa"
   ],
   "window": {
