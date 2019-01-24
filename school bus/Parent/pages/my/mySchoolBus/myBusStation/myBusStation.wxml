@@ -1,0 +1,33 @@
+<!--pages/my/mySchoolBus/myBusStation/myBusStation.wxml-->
+<view style='padding:30rpx;'>
+  <!-- <view style='font-size: 15px;'>{{startEnd[id].remark}}</view> -->
+  <view class='time'>
+    <text>早</text>
+    <text>08：00</text>
+    <text>晚</text>
+    <text>15：00</text>
+  </view>
+  <view class='site'>
+    <view class='site1'  wx:for='{{stations}}' wx:key='{{index}}'>
+      <image src='/pages/images/arrow.png'></image>
+      <view bindtap='pressStation' data-index="{{index}}" id="{{item.id}}" >{{item.name}}</view>
+      <!-- <image  src='/pages/images/point.png' hidden='{{item.id==stationId?"false":"true"}}' ></image> -->
+            <image  src='/pages/images/point.png' style='display:{{item.id == stationId ? "block" : "none"}};'></image>
+
+    </view>
+  </view>
+  <view>
+
+   <view class='viewbg'> 
+     <view class='viewline'>1</view>
+     <view class='viewline'>2</view>
+     <view class='viewline'>3</view>
+   </view>
+
+
+  <view>选择{{stationName}}为你的上车地点</view>
+  
+  <button bindtap='submitOnBusStation'>确认</button>
+  </view>
+</view>
+

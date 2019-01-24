@@ -3,9 +3,9 @@
   <view style='font-size: 15px;'>{{startEnd[id].remark}}</view>
   <view class='time'>
     <text>早</text>
-    <text>08：00</text>
+    <text>{{goTime}}</text>
     <text>晚</text>
-    <text>15：00</text>
+    <text>{{backTime}}</text>
   </view>
   <view class='site'>
     <view class='site1' wx:for='{{startEnd[id].stations}}' wx:key='{{index}}'>

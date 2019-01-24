@@ -1,4 +1,6 @@
 'use strict';
+
+
 let choose_year = null,
   choose_month = null,
   choose_day = null,
@@ -25,7 +27,12 @@ let choose_year = null,
   hasTaskClassName = 'has-task'
 
 const conf = {
+
   data: {
+    
+    startTime:'234455',
+    endTime:'1344',
+
     // 是否有 天数 空格
     hasEmptyGrid: false,
     showPicker: false,
@@ -70,11 +77,59 @@ const conf = {
       cur_date,
       weeks_ch
     });
+   
     this.calculateEmptyGrids(cur_year, cur_month);
     this.calculateDays(cur_year, cur_month);
     // 创建动画实例
-    this.initAnimation()
+    this.initAnimation();
+    var today = cur_year+'-'+cur_month+'-'+cur_day;
+
+    this.getAttendanceTime(today);
   },
+  
+  //获取当日打卡日期                                                              
+  getAttendanceTime(dayStr){
+    var that = this;
+    wx.request({
+      url: 'http://schoolbus.917tou.com/OrientBase/chiefService/attendances/history',
+      data:{
+        userId:3,
+        startDate: dayStr,
+        endDate: dayStr,
+      },
+      method:'GET',
+      header:{
+        'content-type':'application/json'
+      },
+      success(res){
+        //取数组里的最后一个对象
+        if (!res.data.data){
+          that.setData({
+            startTime: '',
+            endTime: ''
+          })
+        }else{
+          let arrLength = res.data.data.length;
+
+          let obj = res.data.data[arrLength-1];
+          
+          var startTimeStr =new String(obj.clockInTime);
+          var todayStr = startTimeStr.substring(0,11);
+          console.log("todayStr"+todayStr);
+          var  endTimeStr = todayStr+obj.clockOutTime;
+          console.log("endTimeStr" + endTimeStr);
+  
+          that.setData({
+            startTime: obj.clockInTime,
+            endTime: endTimeStr
+          })
+        }
+
+      }
+
+    })
+  },
+ 
   initAnimation() {
     var animation = wx.createAnimation({
       duration: 500,
@@ -159,6 +214,7 @@ const conf = {
     const cur_year = date.getFullYear()
     const cur_month = date.getMonth() + 1
     const cur_day = date.getDate()
+
     const cur_date = this.str2str(cur_year, cur_month, cur_day)
     this.setData({
       cur_year,
@@ -168,7 +224,11 @@ const conf = {
     });
     this.calculateEmptyGrids(cur_year, cur_month)
     this.calculateDays(cur_year, cur_month)
+    var today = cur_year + '-' + cur_month + '-' + cur_day;
+    this.getAttendanceTime(today);
+
   },
+  
   // 计算年月对应的天数
   calculateDays(year, month) {
     var that = this
@@ -404,13 +464,17 @@ const conf = {
   // 展开时选日期
   tapDayItem(e) {
     const idx = e.currentTarget.dataset.idx;
+
     const days = this.data.days;
+   
     days[idx].choosed = true;
     //days[idx].choosed = !days[idx].choosed;
     this.setData({
       // days,
       cur_date: days[idx].dateStr
     });
+    console.log("cur_date---" + days[idx].dateStr);
+    this.getAttendanceTime(days[idx].dateStr);
     this.computedLineDays()
   },
   // 收起时选日期

@@ -14,12 +14,12 @@ Page({
   onLoad: function (options) {
     var that = this;
     that.setData({
-      name: app.chooseChildName ? app.chooseChildName : app.defaultchildName,
-      gender: app.chooseChildgender ? app.chooseChildgender : app.defaultchildgender,
-      classname: app.chooseChildclassname ? app.chooseChildclassname : app.defaultchildclassname,
-      phone: app.chooseChildphone ? app.chooseChildphone : app.defaultchildphone,
-      homeAddress: app.chooseChildhomeAddress ? app.chooseChildhomeAddress : app.defaultchildhomeAddress,
-      schoolId: app.chooseChildschoolId ? app.chooseChildschoolId : app.defaultchildschoolId,
+      name: app.globalData.choosechild.name,
+      gender: app.globalData.choosechild.gender,
+      classname: app.globalData.choosechild.classname,
+      phone: app.globalData.choosechild.phone,
+      homeAddress: app.globalData.choosechild.homeAddress,
+      schoolId: app.globalData.choosechild.schoolId,
     })
     // console.log(that.data.schoolId)
     wx.request({

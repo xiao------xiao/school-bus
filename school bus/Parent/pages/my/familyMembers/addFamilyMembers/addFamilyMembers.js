@@ -45,7 +45,7 @@ Page({
     }
     else {
       var data = {
-        studentId: app.chooseChildId ? app.chooseChildId : app.defaultchildId,
+        studentId: app.globalData.choosechild.id,
         name: e.detail.value.name,
         phone: e.detail.value.tel,
         role: e.detail.value.parent,

@@ -70,8 +70,8 @@
 .route {
   height: 100rpx;
   line-height: 100rpx;
-  border-bottom: 1px solid #909090;
   display: flex;
+  background-color: #fff;
 }
 
 .route image {

@@ -64,8 +64,13 @@ Page({
   onLoad: function (options) {
   },
   onShow: function () {
+    var childIndex = app.globalData.childIndex
+    console.log("childindex === "+childIndex);
+
+    var childModel = app.globalData.loginInfo.children[childIndex]
+    console.log("child name --"+childModel.name)
     this.setData({
-      name: app.chooseChildName ? app.chooseChildName : app.defaultchildName
+      name: childModel.name
     })
   }
 })  

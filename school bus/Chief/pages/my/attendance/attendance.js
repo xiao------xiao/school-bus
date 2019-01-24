@@ -53,6 +53,8 @@ const conf = {
     daysAnimationData: {},
     // 年月 标题
     yearMonthTitleAnimationData: {},
+    startTime:'',
+    endTime:''
   },
   onLoad() {
     // 设置单行高度
@@ -74,7 +76,54 @@ const conf = {
     this.calculateDays(cur_year, cur_month);
     // 创建动画实例
     this.initAnimation()
+    var today = cur_year+'-'+cur_month+'-'+cur_day;
+    this.getAttendanceTime(today)
   },
+
+  //获取当日打卡日期                                                              
+  getAttendanceTime(dayStr) {
+    var that = this;
+    wx.request({
+      url: 'http://schoolbus.917tou.com/OrientBase/chiefService/attendances/history',
+      data: {
+        userId: 3,
+        startDate: dayStr,
+        endDate: dayStr,
+      },
+      method: 'GET',
+      header: {
+        'content-type': 'application/json'
+      },
+      success(res) {
+        //取数组里的最后一个对象
+        if (!res.data.data) {
+          that.setData({
+            startTime: '',
+            endTime: ''
+          })
+        } else {
+          let arrLength = res.data.data.length;
+
+          let obj = res.data.data[arrLength - 1];
+
+          var startTimeStr = new String(obj.clockInTime);
+          var todayStr = startTimeStr.substring(0, 11);
+          console.log("todayStr" + todayStr);
+          var endTimeStr = todayStr + obj.clockOutTime;
+          console.log("endTimeStr" + endTimeStr);
+
+          that.setData({
+            startTime: obj.clockInTime,
+            endTime: endTimeStr
+          })
+        }
+
+      }
+
+    })
+  },
+
+
   initAnimation() {
     var animation = wx.createAnimation({
       duration: 500,
@@ -168,6 +217,8 @@ const conf = {
     });
     this.calculateEmptyGrids(cur_year, cur_month)
     this.calculateDays(cur_year, cur_month)
+    var today = cur_year+'-'+cur_month+'-'+cur_day
+    this.getAttendanceTime(today)
   },
   // 计算年月对应的天数
   calculateDays(year, month) {
@@ -412,8 +463,10 @@ const conf = {
       cur_date: days[idx].dateStr
     });
     this.computedLineDays()
+    var selectedDay = days[idx].dateStr
+    this.getAttendanceTime(selectedDay)
   },
-  // 收起时选日期
+  // 收起时选日期  //测试只调用上面的方法 这个方法不调用
   tapDayItemWhenCloseCalendar(e) {
     const idx = e.currentTarget.dataset.idx;
     const days = this.data.onlyThisWeekDays
@@ -422,6 +475,8 @@ const conf = {
       // days,
       cur_date: days[idx].dateStr
     });
+
+    
   },
   touchStart(e) {
     _x_start = e.touches[0].pageX

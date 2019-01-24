@@ -32,6 +32,26 @@
     background-color: #ebb842;
     color: #fff ;
 }
+.time_container{
+   display: block;
+   margin-top: 20rpx;
+}
+.blacktext{
+  position: relative;
+  left: 10%;
+  width: 30%;
+  
+  font-size:28rpx;
+  color: black;
+
+}
+.graytext{
+  position: relative;
+  left: 40%;
+  width: 40%;
+  font-size:28rpx;
+  color: #888;
+}
 .week {
     text-align: center;
     font-size: 28rpx;

@@ -18,7 +18,7 @@
       <view>已退款</view>
     </view>
   </view>
-  <view style='background-color:#fff;height:100rpx;line-height:100rpx;'>
+  <view style='background-color:#fff;height:100rpx;line-height:100rpx;padding-left:10rpx'>
     <image style='width:40rpx;height:40rpx;' src='../../images/icon_order.png'></image>
     <text style='font-size:15px;margin-left:30rpx;'>我的订单</text>
     <text style='font-size:10px;float:right;margin-right:40rpx;color:#909090'>查看全部</text>

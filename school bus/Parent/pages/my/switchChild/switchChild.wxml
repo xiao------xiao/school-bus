@@ -5,7 +5,7 @@
   <radio-group name='name'>
     <label wx:for='{{children}}' wx:key='{{index}}'>
       <image src='{{item.gender==0?icon.girl:icon.boy}}'></image>
-      <radio value='{{item.name}}' color='#fbb519' checked='{{index==0?true:false}}'>{{item.name}}</radio>
+      <radio value='{{item.name}}' color='#fbb519' checked="{{index==selectedIndex?true:false}}">{{item.name}}</radio>
     </label>
   </radio-group>
   <button formType="submit">确定</button>

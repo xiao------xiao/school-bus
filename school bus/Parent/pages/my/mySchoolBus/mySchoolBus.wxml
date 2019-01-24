@@ -12,6 +12,17 @@
       <text id='tabright' class='tab-right {{currentTab === 1 ? "tab-active" : ""}}' bindtap='switchTab'>我的收藏</text>
     </view>
   </view>
-  <view class='content-wrapper' wx:if='{{currentTab === 0}}'>我的预定</view>
+  <view class='content-wrapper' wx:if='{{currentTab === 0}}'>
+   <view>
+      <navigator url='../mySchoolBus/myBusStation/myBusStation?stationIndex={{index}}' class='route' wx:for='{{route}}' wx:key='index'>
+        <image class='icon1' src='/pages/images/icon_collection.png'></image>
+        <image class='icon2' src='/pages/images/icon_bus.png'></image>
+        <view class='route_route'>{{item.name}}</view>
+        <view class='site'>{{item.remark}}</view>
+        <image class='icon_comein' src='/pages/images/icon_comein.png'></image>
+      </navigator>
+    </view>
+  
+  </view>
   <view class='content-wrapper' wx:if='{{currentTab === 1}}'>我的收藏</view>
 </view>

@@ -11,6 +11,7 @@
     "pages/my/pick-up/pick-up",
     "pages/my/switchChild/switchChild",
     "pages/my/mySchoolBus/mySchoolBus",
+    "pages/my/mySchoolBus/myBusStation/myBusStation",
     "pages/my/myAccount/myAccount",
     "pages/my/askForLeave/askForLeave",
     "pages/my/childInformation/childInformation",

@@ -74,6 +74,48 @@ const conf = {
     this.calculateDays(cur_year, cur_month);
     // 创建动画实例
     this.initAnimation()
+    this.getRecordDetail()
+  },
+  getRecordDetail(){
+    var that = this;
+    var parentId = '12';
+    var childId = '4';
+    wx.request({
+      url: 'http://schoolbus.917tou.com/OrientBase/parentServices/transfers/' + parentId +'/'+ childId +'/detail',
+      data: {
+        transferDate:'2018-01-13'
+      },
+      method: 'GET',
+      header: {
+        'content-type': 'application/json'
+      },
+      success(res) {
+        //取数组里的最后一个对象
+        if (!res.data.data) {
+          that.setData({
+            startTime: '',
+            endTime: ''
+          })
+        } else {
+          let arrLength = res.data.data.length;
+
+          let obj = res.data.data[arrLength - 1];
+
+          var startTimeStr = new String(obj.clockInTime);
+          var todayStr = startTimeStr.substring(0, 11);
+          console.log("todayStr" + todayStr);
+          var endTimeStr = todayStr + obj.clockOutTime;
+          console.log("endTimeStr" + endTimeStr);
+
+          that.setData({
+            startTime: obj.clockInTime,
+            endTime: endTimeStr
+          })
+        }
+
+      }
+
+    })
   },
   initAnimation() {
     var animation = wx.createAnimation({

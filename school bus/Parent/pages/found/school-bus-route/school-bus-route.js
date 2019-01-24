@@ -19,7 +19,10 @@ Page({
   },
   onLoad: function() {
     var that = this
-    var studentId = app.chooseChildId ? app.chooseChildId : app.defaultchildId
+
+    var studentId = app.globalData.choosechild.id;
+    console.log(studentId)
+    
     wx.request({
       url: 'http://schoolbus.917tou.com/OrientBase/parentServices/InstanceRoutes',
       data: {

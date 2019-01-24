@@ -32,10 +32,10 @@
 <view>
   <view class='attendance'>
     <text>上班时间</text>
-    <text style='float:right;color:#909090;'>09：00</text>
+    <text style='float:right;color:#909090;'>{{startTime}}</text>
   </view>
   <view class='attendance' style='border:none;'>
     <text>下班时间</text>
-    <text style='float:right;color:#909090;'>17：00</text>
+    <text style='float:right;color:#909090;'>{{endTime}}</text>
   </view>
 </view>

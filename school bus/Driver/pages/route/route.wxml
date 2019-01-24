@@ -19,12 +19,10 @@
   <!-- 站点模式 -->
   <view class='content-wrapper' wx:if='{{currentTab === 0}}'>
     <view>
-      <image class='image' src='../images/shared bus.png'></image>
-      <navigator url='/pages/route/route(school)/route(school)?id={{index}}' class='route' wx:for='{{route}}' wx:key='index'>
-        <image class='icon1' src='../images/icon_collection.png'></image>
+      <navigator url='/pages/route/route(school)/route(school)' class='route'>
         <image class='icon2' src='../images/icon_bus.png'></image>
-        <view class='route_route'>{{item.name}}</view>
-        <view class='site'>{{item.remark}}</view>
+        <view class='route_route'>{{route.busNo}}</view>
+        <view class='site'>{{route.roteRemark}}</view>
         <image class='icon_comein' src='../images/icon_comein.png'></image>
       </navigator>
     </view>

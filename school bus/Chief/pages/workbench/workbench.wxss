@@ -4,7 +4,7 @@
   background-color: #fff;
   margin: 30rpx;
 }
-.bus-route image:first-child{
+.bus-route .circle02{
   width: 30rpx;
   height: 30rpx;
   position: absolute;
@@ -16,7 +16,7 @@
   left: 80rpx;
   bottom: 30rpx;
 }
-.bus-route image:last-child{
+.bus-route .map{
   width: 50rpx;
   height: 50rpx;
   position: absolute;
@@ -53,4 +53,7 @@
   width: 50rpx;
   height: 50rpx;
   margin-top: 30rpx;
+}
+.content-wrapper{
+  height: 300rpx;
 }

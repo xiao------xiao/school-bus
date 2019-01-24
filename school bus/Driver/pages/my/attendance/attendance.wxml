@@ -28,4 +28,12 @@
   </view>
   </view>
 </view>
-<view>今日记录</view>
+
+<view class="time_container">
+ <text class="blacktext">上班时间    </text>
+ <text class="graytext">{{startTime}}</text>
+</view>
+<view class="time_container" >
+ <text class="blacktext">下班时间    </text>
+ <text class="graytext">{{endTime}}</text>
+</view>

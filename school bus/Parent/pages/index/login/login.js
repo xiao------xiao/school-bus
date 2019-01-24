@@ -60,6 +60,7 @@ Page({
       rbFlag = true;
       console.log('rbFlag', rbFlag);
       wx.setStorageSync(rck, rbFlag);
+      
     }
   },
   onReady: function() {
@@ -155,15 +156,21 @@ Page({
           });
           that.setLoginData2()
         } else {
+          app.globalData.loginInfo = res.data.data;
+
           // 记住密码,你也可以放到请求数据成功的里面，这样用户输错信息，就不会记住错误的密码
           // 跳转带有tab的界面使用：wx.switchTab({ url: "../home/home" });
           var obj = new Object();
           obj.name = param.username;
           obj.pswd = param.password;
           console.log('obj', obj);
-          wx.setStorageSync(rui, obj);
-          app.parentId = res.data.data.parentId //获取家长id
-          console.log('家长id', app.parentId)
+          
+          rbFlag = wx.getStorageSync(rck);
+          if (rbFlag) {
+            wx.setStorageSync(rui, obj);
+          } else {
+            wx.setStorageSync(rui, null);
+          }
           setTimeout(function() {
             wx.showToast({
               title: '成功',

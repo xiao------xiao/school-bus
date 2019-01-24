@@ -1,7 +1,7 @@
 .sous{
   display: flex;
   background-color: #f7f7f7;
-  width: 90%;
+  width: 85%;
   margin: 20rpx auto;
   padding: 10rpx;
   border-radius: 1em;
@@ -14,36 +14,4 @@
 .sous input{
   font-size: 30rpx;
   width: 100%;
-}
-.studentlist{
-  display: flex;
-  padding: 10rpx 30rpx;
-  background-color: #fff;
-}
-.studentlist .studentname{
-  width: 100%;
-  font-size: 30rpx;
-}
-.studentlist image{
-  width:30rpx;
-  height: 30rpx;
-}
-.active{
-  display: flex;
-  padding: 10rpx 100rpx;
-  font-size: 30rpx;
-}
-.active view{
-  width: 50%;
-}
-.none{
-  display: none;
-}
-.active1{
-  display: flex;
-  padding: 10rpx 100rpx;
-  font-size: 30rpx;
-}
-.active2 view{
-  width: 50%;
 }

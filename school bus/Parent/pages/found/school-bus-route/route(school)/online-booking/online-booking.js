@@ -53,7 +53,7 @@ Page({
     var time = util.formatTime(new Date());
     // 再通过setData更改Page()里面的data，动态更新页面的数据
     this.setData({
-      name: app.chooseChildName ? app.chooseChildName : app.defaultchildName,
+      name: app.globalData.choosechild.name,
       site: options.site ? options.site : '请选择上车站点',
       siteid: options.siteid ? options.siteid : '',
       datestart: time,
@@ -103,7 +103,7 @@ Page({
       // console.log(orderRule)
       var data = {
         userId: app.parentId,
-        studentId: app.chooseChildId ? app.chooseChildId : app.defaultchildId,
+        studentId: app.globalData.choosechild.id,
         beginDate: e.detail.value.startdate,
         endDate: e.detail.value.enddate,
         stationId: that.data.siteid,

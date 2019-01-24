@@ -24,18 +24,19 @@
       <image src='../images/icon_head.png'></image>
       <view class='driver_details'>
         <view>{{name}}</view>
-        <view style='color:#9c9c9c;font-size:20rpx;'>车牌号：{{licensePlate}}</view>
+        <view style='color:#9c9c9c;font-size:20rpx;'>车牌号：{{busNo}}</view>
       </view>
     </view>
     <view class='Departure-time'>
     <view style='display:flex'>
       <image src='../images/icon_time.png'></image>
       <view style='height:50rpx;line-height:50rpx;margin-left:30rpx;font-size:30rpx;'>发车时间</view>
+      <view style='height:50rpx;line-height:50rpx;margin-left:80rpx;color:#909090;'>早：{{goTime}} --- 晚：{{backTime}}</view>
     </view>
     <view style='display:flex;margin:20rpx 0;'>
       <image src='../images/icon_road.png'></image>
       <view style='height:50rpx;line-height:50rpx;margin-left:30rpx;font-size:30rpx;'>路线</view>
-      <view style='height:50rpx;line-height:50rpx;margin-left:80rpx;color:#909090;'>华府-中心小学</view>
+      <view style='height:50rpx;line-height:50rpx;margin-left:80rpx;color:#909090;'>{{roteRemark}}</view>
     </view>
     </view>
     <view class='content_btn'>

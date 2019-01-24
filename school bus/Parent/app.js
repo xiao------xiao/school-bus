@@ -1,6 +1,15 @@
 //app.js
 App({
+  globalData:{
+    loginInfo:{},
+    childIndex:0,
+    choosechild:null  //选择的孩子模型
+  },
+
   onLaunch: function () {
+
+    this.globalData.childIndex = 0
+
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
@@ -12,6 +21,7 @@ App({
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
       }
     })
+
     // 获取用户信息
     wx.getSetting({
       success: res => {
@@ -31,6 +41,15 @@ App({
           })
         }
       }
+    })
+  },
+
+  showToast(string){
+  //  console.log("app show toast")
+    wx.showToast({
+      title: string,
+      icon: 'success',
+      duration: 2000
     })
   },
   getLocationInfo: function (cb) {

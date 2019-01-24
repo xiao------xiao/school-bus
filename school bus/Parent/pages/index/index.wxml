@@ -8,7 +8,10 @@
       </swiper-item>
       <swiper-item>
         <image src='../images/loading3.png'></image>
+        <view class="login_container">
         <navigator url='/pages/index/login/login'>登 录</navigator>
+        </view>
+        
       </swiper-item>
     </swiper>
 </view>

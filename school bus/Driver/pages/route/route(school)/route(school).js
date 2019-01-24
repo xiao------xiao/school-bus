@@ -3,13 +3,17 @@ var sites = []
 
 Page({
   data: {
-    id: 0,
-    startEnd: ''
+    roteRemark:'',
+    stations: '',
+    goTime:'',
+    backTime:''
   },
   onLoad: function (options) {
     this.setData({
-      id: options.id,
-      startEnd: app.remarks
+      roteRemark: app.route.roteRemark,
+      stations: app.route.stations,
+      goTime: app.route.goTime,
+      backTime: app.route.backTime
     })
   }
 })

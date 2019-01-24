@@ -53,7 +53,10 @@ const conf = {
     daysAnimationData: {},
     // 年月 标题
     yearMonthTitleAnimationData: {},
-    currentTab: 0
+    currentTab: 0,
+    onboardList: [], // 已上车
+    unboardList: [], //未上车
+    leaveList: []//请假
   },
   onLoad() {
     // 设置单行高度
@@ -74,7 +77,35 @@ const conf = {
     this.calculateEmptyGrids(cur_year, cur_month);
     this.calculateDays(cur_year, cur_month);
     // 创建动画实例
-    this.initAnimation()
+    this.initAnimation();
+  },
+  getOnboardList(){
+    var that = this;
+    wx.request({
+      url: 'http://schoolbus.917tou.com/OrientBase/chiefService/attendances/history',
+      data: {
+        userId: 3,
+        startDate: dayStr,
+        endDate: dayStr,
+      },
+      method: 'GET',
+      header: {
+        'content-type': 'application/json'
+      },
+      success(res) {
+        //取数组里的最后一个对象
+        if (!res.data.data) {
+          that.setData({
+            onboardList: [],
+            unboardList: [],
+            leaveList:[]
+          })
+        } else {
+          
+        }
+      }
+    })
+
   },
   initAnimation() {
     var animation = wx.createAnimation({

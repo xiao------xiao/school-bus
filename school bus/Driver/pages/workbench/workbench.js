@@ -3,7 +3,9 @@ var app = getApp()
 Page({
   data: {
     name: '',
-    licensePlate: '123456789'
+    busNo: '',
+    roteRemark:'',
+    time:''
   },
   onLoad: function () {
     var that = this
@@ -19,6 +21,20 @@ Page({
       },
       fail(err) {
         console.log(err)
+      }
+    })
+    wx.request({
+      url: 'http://192.168.3.78:9080/SmartSchoolBus/driverService/routeInstance/detail',
+      data:app.driverId,
+      method:'GET',
+      success(res){
+        app.route = res.data.data //司机路线
+        that.setData({
+          busNo: app.route.busNo,
+          roteRemark: app.route.roteRemark,
+          goTime: app.route.goTime,
+          backTime: app.route.backTime
+        })
       }
     })
   }

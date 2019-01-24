@@ -10,8 +10,8 @@ Page({
     wx.request({
       url: 'http://schoolbus.917tou.com/OrientBase/parentServices/baseInfo/parentInfos',
       data: {
-        studentId: app.chooseChildId ? app.chooseChildId : app.defaultchildId,
-        userId: app.parentId
+        studentId: app.globalData.choosechild.id,
+        userId: app.globalData.loginInfo.parentId
       },
       method: 'GET',
       success(res) {

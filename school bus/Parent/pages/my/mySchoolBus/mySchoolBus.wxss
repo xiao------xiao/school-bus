@@ -35,3 +35,36 @@
 .img-active{
   display: none;
 }
+
+
+.route {
+  height: 100rpx;
+  line-height: 100rpx;
+  border-bottom: 1px solid #909090;
+  display: flex;
+}
+
+.route image {
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.icon1, .icon2 {
+  padding-top: 30rpx;
+}
+
+.icon1, .icon2, .route_route, .site {
+  margin-left: 3%;
+}
+
+.site {
+  color: #909090;
+}
+
+.route .icon_comein {
+  position: absolute;
+  right: 3%;
+  width: 12rpx;
+  height: 20rpx;
+  padding-top: 40rpx;
+}
